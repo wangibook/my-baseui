@@ -6,7 +6,7 @@ import './styles/index.scss';
 
 import myBaseui from "../packages/index";
 import hljs from "highlight.js";
-import "highlight.js/styles/color-brewer.css";
+// import "highlight.js/styles/color-brewer.css";
 
 const app = createApp(App);
 app.use(router)
