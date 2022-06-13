@@ -18,7 +18,8 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build && node ./config/copyDocs.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "bash deploy.sh"
   },
   "dependencies": {
     "highlight.js": "^11.5.1",
