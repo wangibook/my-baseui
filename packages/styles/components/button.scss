@@ -1,0 +1,178 @@
+@import '../common/base.scss';
+
+.m-button {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-left: 10px;
+  line-height: 1;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  background: #fff;
+  color: #333;
+  white-space: nowrap;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+.m-button--default{
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  color: #333;
+  &:hover {
+    opacity: 0.8;
+    border-color: $primary;
+    color: $primary;
+  }
+}
+
+.m-button--primary{
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+  &:hover {
+    opacity: 0.8;
+    color: #fff;
+  }
+}
+.m-button--success {
+  color: #fff;
+  background-color: $success;
+  border-color: $success;
+  &:hover {
+    opacity: 0.8;
+    background-color: $success;
+    color: #fff;
+  }
+}
+.m-button--danger {
+  color: #fff;
+  background-color: $danger;
+  border-color: $danger;
+  &:hover {
+    color: #fff;
+    border-color: $danger;
+    opacity: 0.8;
+  }
+}
+.m-button--info {
+  color: #fff;
+  background-color: $info;
+  border-color: $info;
+  &:hover {
+    color: #fff;
+    border-color: $info;
+    opacity: 0.8;
+  }
+}
+.m-button--warning {
+  color: #fff;
+  background-color: $warning;
+  border-color: $warning;
+  &:hover {
+    color: #fff;
+    border-color: $warning;
+    opacity: 0.8;
+  }
+}
+.m-button--text {
+  border-color: transparent;
+  color: #409eff;
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+// 禁止
+.is-disabled{
+  color: #fff;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ebeef5;
+}
+.m-button--default.is-disabled{
+  color: #c0c4cc;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ebeef5;
+}
+.m-button--primary.is-disabled{
+  color: #fff;
+  background-color: #a0cfff;
+  border-color: #a0cfff;
+}
+.m-button--success.is-disabled{
+  color: #fff;
+  background-color: #b3e19d;
+  border-color: #b3e19d;
+}
+.m-button--danger.is-disabled{
+  color: #fff;
+  background-color: #fab6b6;
+  border-color: #fab6b6;
+}
+.m-button--info.is-disabled{
+  color: #fff;
+  background-color: #c8c9cc;
+  border-color: #c8c9cc;
+}
+.m-button--warning.is-disabled{
+  color: #fff;
+  background-color: #f3d19e;
+  border-color: #f3d19e;
+}
+.m-button--text.is-disabled{
+  cursor: no-drop;
+  color: #555;
+  border: 1px solid #fff;
+  background: none;
+  opacity: .5;
+}
+// 圆角
+.is-round{
+  border-radius: 20px;
+}
+// 圆
+.is-circle{
+  border-radius: 50%;
+  padding: 12px;
+}
+.noText{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.icon-loading{
+  display: inline-block;
+  margin-right: 4px;
+  animation: rotating 2s linear infinite;
+  -webkit-animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.m-button--medium{
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.m-button--small{
+  padding: 9px 15px;
+  font-size: 12px;
+}
+.m-button--mini{
+  padding: 7px 15px;
+  font-size: 12px;
+}
+
+.m-slot-prepend,.m-slot-append{
+  display: inline-block;
+  .m-button{
+    margin-left: 0;
+  }
+}

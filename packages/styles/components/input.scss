@@ -1,0 +1,105 @@
+@import '../common/base.scss';
+
+.m-input-default{
+  display: inline-block;
+  margin-top: 10px;
+  .demo-input{
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    .m-input{
+      width:220px;
+      height:40px;
+      font-size:14px;
+      outline:none;
+      border:0;
+      margin:0;
+      padding:10px;
+      border:1px solid #dcdfe6f6;
+      border-radius:4px;
+      box-sizing: border-box;
+      color:#606266;
+      transition: all .2s ease;
+      &:focus{
+        border-color: $primary;
+      }
+    }
+    .m-input-leftIcon{
+      padding-left: 30px;
+    }
+    .m-input-rightIcon {
+      padding-right: 30px;
+    }
+    // 禁用
+    .m-input-disabled{
+      background-color: #f5f7fa;
+      border-color: #e4e7ed;
+      color: #c0c4cc;
+      cursor: not-allowed;
+    }
+    // 可清空
+    .icon-close{
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      position:absolute;
+      right:10px;
+      top:10px;
+      color:#94969b;
+      transition: all .2s ease;
+      cursor: pointer;
+    }
+    .left-icon{
+      position: absolute;
+      left: 10px;
+      top: 13px;
+      color: #94969b;
+    }
+    .right-icon{
+      position: absolute;
+      right: 10px;
+      top: 13px;
+      color: #94969b;
+    }
+    .password-icon{
+      position: absolute;
+      right: 10px;
+      top: 13px;
+      color: #94969b;
+      cursor: pointer;
+    }
+    .m-input--medium{
+      font-size: 14px;
+      height: 36px;
+      line-height: 36px;
+    }
+    .m-input--small{
+      font-size: 13px;
+      height: 32px;
+      line-height: 32px;
+    }
+    .m-input--mini{
+      font-size: 12px;
+      height: 28px;
+      line-height: 28px;
+    }
+  }
+  .m-slot-prepend,.m-slot-append{
+    display: inline-block;
+  }
+  .m-input-group__prepend{
+    .m-input{
+      border-top-left-radius: 0 ;
+      border-bottom-left-radius: 0;
+    }
+  }
+  .m-input-group__append{
+    margin-right: 0;
+    .m-input{
+      border-top-right-radius: 0 ;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
