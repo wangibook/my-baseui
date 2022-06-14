@@ -2,7 +2,7 @@ let copydir = require('copy-dir')
 
 copydir.sync(
   process.cwd() + '/packages/components',
-  process.cwd() + '/dist/components',
+  process.cwd() + '/docs/components',
   {
     utimes: true,
     mode: true,
