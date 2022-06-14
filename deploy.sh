@@ -4,10 +4,10 @@
 set -e
 
 # 构建
-npm run build:html
+npm run build:docs
 
 # 进入构建文件夹
-cd dist
+cd docs
 
 # 如果你要部署到自定义域名
 # echo 'www.example.com' > CNAME
