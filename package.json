@@ -17,8 +17,8 @@
   ],
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build ",
-    "build:html": "vite build --config ./build/build.js && node ./config/copyDocs.js",
+    "build:docs": "vite build --config ./build/docs.config.js && node ./config/copyDocs.js",
+    "build:dist": "vite build --config ./build/dist.config.js",
     "preview": "vite preview",
     "deploy": "bash deploy.sh"
   },
