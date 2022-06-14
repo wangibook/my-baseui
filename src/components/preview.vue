@@ -54,7 +54,7 @@ const getSourceCode = async () => {
     // console.log(msg.default);
     sourceCode.value = msg.default
   } else {
-    sourceCode.value = await fetch(`/components/${props.compName}/doc/${props.demoName}.vue`).then(res => {
+    sourceCode.value = await fetch(`/packages/components/${props.compName}/doc/${props.demoName}.vue`).then(res => {
       res.text()
     });
   }
