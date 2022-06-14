@@ -15,7 +15,10 @@ pre > code {
   hyphens: none;
   background: 0 0;
   font-size: 14px;
+  display: block;
   border: 1px solid #f0f0f0;
+  background: #F5F7FA;
+  padding: 1em;
 }
 pre code.hljs {
   display: block;

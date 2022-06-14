@@ -13,7 +13,6 @@
       <i :class="iconClass"></i>
       <span>{{ showCode ? "隐藏代码" : "显示代码" }}</span>
     </div>
-    {{compName}}--
   </div>
 </template>
 

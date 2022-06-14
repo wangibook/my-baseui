@@ -51,12 +51,6 @@ const goComponents = () => {
 const goGitHub = () => {
   window.open("https://github.com/wangibook/my-baseui");
 }
-
-onMounted(() => {
-  sessionStorage.removeItem('mIndex')
-  sessionStorage.removeItem('nIndex')
-})
-
 </script>
 
 <style lang="scss" scoped>

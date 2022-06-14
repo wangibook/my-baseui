@@ -17,6 +17,11 @@ const routes = [
         component: () => import('/packages/components/install/doc/doc.md')
       },
       {
+        path: '/icon',
+        name: 'Icon 图标',
+        component: () => import('/packages/components/icon/doc/doc.md')
+      },
+      {
         path: '/button',
         name: 'Button 按钮',
         component: () => import('/packages/components/button/doc/doc.md')
