@@ -18,8 +18,8 @@
         <m-button
           class="btn2"
           round
-          @click="goGitee"
-          >Gitee</m-button
+          @click="goGitHub"
+          >GitHub</m-button
         >
       </div>
       <ul class="cardGroups">
@@ -42,14 +42,21 @@
 
 <script setup>
 import Header from '@/components/header.vue';
+import { onMounted } from '@vue/runtime-core';
 import { useRouter } from "vue-router";
 const router = useRouter();
 const goComponents = () => {
   router.push("/home");
 }
-const goGitee = () => {
-  window.open("https://gitee.com/DaShiKuaiPao/my-baseui");
+const goGitHub = () => {
+  window.open("https://github.com/wangibook/my-baseui");
 }
+
+onMounted(() => {
+  sessionStorage.removeItem('mIndex')
+  sessionStorage.removeItem('nIndex')
+})
+
 </script>
 
 <style lang="scss" scoped>

@@ -6,7 +6,7 @@
         <li 
           v-for="(ele,index) in item.children" 
           :key="ele"
-          :class="{'active': current === index}"
+          :class="{'active': mIndex == index}"
           @click="goPath(ele,index)">
           {{ele.name}}
         </li>
@@ -19,20 +19,21 @@
 </template>
 
 <script setup>
-import { computed, ref, reactive } from 'vue';
+import { computed, ref, reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import Header from '@/components/header.vue';
 
 const router = useRouter()
-const current = ref(0)
+const mIndex = ref(sessionStorage.getItem("mIndex") || '0');
 
 const routes = computed(() => router.options.routes)
 
 const goPath = (ele,index) => {
-  current.value = index
+  mIndex.value = index
   router.push({
     path:ele.path
   })
+  sessionStorage.setItem("mIndex", index);
 }
 
 </script>

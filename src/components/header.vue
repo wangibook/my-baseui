@@ -8,7 +8,7 @@
           class="tool-item"
           v-for="(item, index) in tools"
           :key="index"
-          :class="{'active': active === index}"
+          :class="{'active': nIndex == index}"
           @click="pageView(item, index)">
           {{ item.name }}
         </li>
@@ -22,8 +22,7 @@ import { computed, ref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter()
-const active = ref(0)
-
+const nIndex = ref(sessionStorage.getItem("nIndex") || '0');
 
 const state = reactive({
   tools: [
@@ -36,9 +35,9 @@ const state = reactive({
       path: "/home",
     },
     {
-      name: "Gitee",
+      name: "GitHub",
       path: "open",
-      url: "https://gitee.com/DaShiKuaiPao/my-baseui"
+      url: "https://github.com/wangibook/my-baseui"
     }
   ],
 });
@@ -49,12 +48,13 @@ const toHome = () => {
 };
 
 const pageView = (item,index) => {
-  active.value = index
+  nIndex.value = index
   if (item.path == "open") {
     window.open(item.url);
   } else {
     router.push(item.path);
   }
+  sessionStorage.setItem("nIndex", index);
 }
 
 </script>
