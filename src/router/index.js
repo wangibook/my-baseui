@@ -31,6 +31,11 @@ const routes = [
         name: 'Input 输入框',
         component: () => import('/packages/components/input/doc/doc.md')
       },
+      {
+        path: '/space',
+        name: 'Space 间距',
+        component: () => import('/packages/components/space/doc/doc.md')
+      },
     ]
   }
 ]
