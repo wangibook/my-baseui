@@ -1,6 +1,7 @@
 <script setup>
 import demo1 from './demo1.vue';
 import demo2 from './demo2.vue';
+import demo3 from './demo3.vue';
 import preview from '@/components/preview.vue';
 </script>
 
@@ -26,3 +27,21 @@ import preview from '@/components/preview.vue';
   <demo2/>
 </div>
 <preview compName="space" demoName="demo2"/>
+
+
+## 自定义 Size
+
+#### 通过调整 size 的值来控制间距的大小
+<div class="source">
+  <demo3/>
+</div>
+<preview compName="space" demoName="demo3"/>
+
+
+## Attributes 参数
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| direction     | 排列的方向   | string    |   vertical/horizontal      |    	horizontal    |
+| size     | 间隔大小   | string / number   |   -      |    10     |
+
+<br/>

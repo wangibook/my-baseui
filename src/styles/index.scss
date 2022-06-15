@@ -6,3 +6,18 @@ ol, ul {
   margin: 0;
   padding: 0;
 }
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.5em;
+  td{
+    border-top: 1px solid #dcdfe6;
+    border-bottom: 1px solid #dcdfe6;
+    padding: 0.6em 1em;
+    text-align: center;
+    max-width: 250px;
+    white-space: pre-wrap;
+  }
+}
