@@ -15,7 +15,7 @@
 
 <script>
 import { ref } from 'vue';
-import iconList from '@/assets/iconfont/iconfont.json';
+import iconList from '~/iconfont/iconfont.json';
 export default {
   setup() {
     const keywords = ref('')
