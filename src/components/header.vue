@@ -61,8 +61,8 @@ const pageView = (item,index) => {
 
 <style lang="scss" scoped>
 header{
-  height: 50px;
-  line-height: 50px;
+  height: 60px;
+  line-height: 60px;
   box-sizing: border-box;
   box-shadow: 0 2px 8px #f0f1f2;
   padding: 0 40px;
@@ -70,7 +70,7 @@ header{
     width: 22px;
     height: 22px;
     float: left;
-    margin: 15px 10px 0 0;
+    margin: 20px 10px 0 0;
     cursor: pointer;
   }
   .left{

@@ -40,50 +40,10 @@ const goPath = (ele,ii,index) => {
 </script>
 
 <style lang="scss" scoped>
-header{
-  height: 50px;
-  line-height: 50px;
-  box-sizing: border-box;
-  box-shadow: 0 2px 8px #f0f1f2;
-  padding: 0 40px;
-  .img-logo{
-    width: 22px;
-    height: 22px;
-    float: left;
-    margin: 15px 10px 0 0;
-    cursor: pointer;
-  }
-  .left{
-    float: left;
-    color: #4a5264;
-    font-weight: 700;
-    font-size: 18px;
-    text-decoration: none;
-  }
-  .toolsBox{
-    float: right;
-    .tool-item{
-      font-weight: 400;
-      font-size: 16px;
-      padding: 8px 3px;
-      margin-left: 25px;
-      border-bottom: 2px solid #fff;
-      display: inline-block;
-      float: none;
-      line-height: normal;
-      transition: all .2s ease;
-      cursor: pointer;
-    }
-    .active{
-      color: #409eff;
-      border-bottom: 2px solid #409eff;
-    }
-  }
-}
 .main-container{
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 60px);
   overflow: hidden;
   .sidebar{
     width: 200px;
