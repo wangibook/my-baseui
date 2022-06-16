@@ -1,0 +1,35 @@
+.m-textarea-default{
+  width:auto;
+  height:auto;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  textarea{
+    padding:0;
+    outline: none;
+    border:1px solid #dcdfe6;
+    transition: all .2s ease;
+    border-radius: 3px;
+    padding:8px;
+    box-sizing: border-box;
+    font-size:14px;
+    color:#606266;
+    font-family: auto;
+    &:focus,&:active,&:focus-visible{
+      border:1px solid #0e80eb;
+    }
+  }
+  .m-textarea-disabled{
+    cursor: not-allowed;
+    &:focus,&:active,&:focus-visible{
+      border:1px solid #dcdfe6;
+    }
+  }
+  .max-length-box{
+    font-size:14px;
+    color:#606266;
+    position: absolute;
+    bottom:10px;
+    right:10px;
+  }
+}

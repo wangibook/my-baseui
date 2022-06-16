@@ -16,10 +16,6 @@ export default [
     name: 'Basic 基础组件',
     list: [
       {
-        path: '/button',
-        name: 'Button 按钮'
-      },
-      {
         path: '/layout',
         name: 'Layout 布局'
       },
@@ -28,12 +24,20 @@ export default [
         name: 'Icon 图标'
       },
       {
+        path: '/space',
+        name: 'Space 间距'
+      },
+      {
+        path: '/button',
+        name: 'Button 按钮'
+      },
+      {
         path: '/input',
         name: 'Input 输入框'
       },
       {
-        path: '/space',
-        name: 'Space 间距'
+        path: '/textarea',
+        name: 'Textarea 文本域'
       },
     ]
   }

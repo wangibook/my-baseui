@@ -95,9 +95,9 @@ import preview from '@/components/preview.vue';
 ## Events
 | 事件名 | 说明 | 回调参数 |  示例  |
 |----------|--------|---------|--------|
-| blur   | 在 Input 失去焦点时触发 | (event: Event) | blur=(e)=>{console.log(e.target.value)} |
-| focus  | 在 Input 获得焦点时触发 | (event: Event) | focus=(e)=>{console.log(e.target.value)} |
-| change | 在 Input 失去焦点或用户按下回车时触发 | (event: Event) | change=(e)=>{console.log(e.target.value)} |
+| blur   | 在 Input 失去焦点时触发 | (event: Event) | blur=(e)=>{console.log(e)} |
+| focus  | 在 Input 获得焦点时触发 | (event: Event) | focus=(e)=>{console.log(e)} |
+| change | 在 Input 失去焦点或用户按下回车时触发 | (event: Event) | change=(e)=>{console.log(e)} |
 | input  | 在 Input 值改变时触发 | (value: string \| number) | input=(e)=>{console.log(e)} |
 | clear  | 在点击由 `clearable` 属性生成的清空按钮时触发 | — |  — | 
 

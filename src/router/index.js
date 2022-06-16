@@ -32,6 +32,11 @@ const routes = [
         component: () => import('/packages/components/icon/doc/doc.md')
       },
       {
+        path: '/space',
+        name: 'Space 间距',
+        component: () => import('/packages/components/space/doc/doc.md')
+      },
+      {
         path: '/button',
         name: 'Button 按钮',
         component: () => import('/packages/components/button/doc/doc.md')
@@ -42,10 +47,10 @@ const routes = [
         component: () => import('/packages/components/input/doc/doc.md')
       },
       {
-        path: '/space',
-        name: 'Space 间距',
-        component: () => import('/packages/components/space/doc/doc.md')
-      },
+        path: '/textarea',
+        name: 'Textarea 文本域',
+        component: () => import('/packages/components/textarea/doc/doc.md')
+      }
     ]
   }
 ]
