@@ -1,7 +1,3 @@
-<template>
-  <div class="m-space">
-  </div>
-</template>
 
 <script>
 import { computed, ref,useSlots,h } from 'vue'
