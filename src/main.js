@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from "./router";
 // 引入全局样式
 import './styles/index.scss';
-import '../packages/iconfont/iconfont.css';
+import '../public/iconfont/iconfont.css';
 
 import myBaseui from "../packages/index";
 import hljs from "highlight.js";

@@ -2,7 +2,7 @@
   "name": "my-baseui",
   "author": "wangdashi",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "my-baseui",
   "main": "./dist/my-baseui.umd.js",
   "module": "./dist/my-baseui.es.js",
