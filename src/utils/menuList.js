@@ -38,7 +38,7 @@ export default [
       {
         path: '/textarea',
         name: 'Textarea 文本域'
-      },
+      }
     ]
   }
 ]

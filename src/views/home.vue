@@ -1,18 +1,20 @@
 <template>
   <Header />
   <div class="main-container">
-    <div class="sidebar">
-      <ul v-for="(item,ii) in menuList" :key="item">
-        <p class="title">{{item.name}}</p>
-        <li 
-          v-for="(ele,index) in item.list" 
-          :key="ele"
-          :class="{'active': mIndex == ii + '-' + index}"
-          @click="goPath(ele,ii,index)">
-          {{ele.name}}
-        </li>
-      </ul>
-    </div>
+    <aside>
+      <div class="sidebar">
+        <ul v-for="(item,ii) in menuList" :key="item">
+          <p class="title">{{item.name}}</p>
+          <li 
+            v-for="(ele,index) in item.list" 
+            :key="ele"
+            :class="{'active': mIndex == ii + '-' + index}"
+            @click="goPath(ele,ii,index)">
+            {{ele.name}}
+          </li>
+        </ul>
+      </div>
+    </aside>
     <main class="app-main">
       <router-view></router-view>
     </main>
@@ -45,32 +47,37 @@ const goPath = (ele,ii,index) => {
   justify-content: space-between;
   height: calc(100vh - 60px);
   overflow: hidden;
-  .sidebar{
-    width: 200px;
+  aside{
     height: 100%;
     border-right: 1px solid #eee;
-    .title{
-      font-weight: 700;
-      margin-bottom: 8px;
-      line-height: 24px;
-      margin-left: 40px;
-      padding-bottom: 5px;
-      color: #333;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    ul{
-      li{
-        height: 50px;
-        line-height: 50px;
-        padding-left: 40px;
-        font-size: 13px;
-        color: #606266;
-        cursor: pointer;
+    overflow-y: auto;
+    .sidebar{
+      width: 200px;
+      height: auto;
+      box-sizing: border-box;
+      .title{
+        font-weight: 700;
+        margin-bottom: 8px;
+        line-height: 24px;
+        margin-left: 40px;
+        padding-bottom: 5px;
+        color: #333;
+        border-bottom: 1px solid #f0f0f0;
       }
-      .active{
-        color: #409eff;
-        background-color: #ECF5FF;
-        border-right: 1px solid #409eff;
+      ul{
+        li{
+          height: 50px;
+          line-height: 50px;
+          padding-left: 40px;
+          font-size: 13px;
+          color: #606266;
+          cursor: pointer;
+        }
+        .active{
+          color: #409eff;
+          background-color: #ECF5FF;
+          border-right: 1px solid #409eff;
+        }
       }
     }
   }
