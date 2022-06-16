@@ -17,6 +17,11 @@ const routes = [
         component: () => import('/packages/components/install/doc/doc.md')
       },
       {
+        path: '/nav',
+        name: '导航',
+        component: () => import('/packages/components/nav/doc/doc.md')
+      },
+      {
         path: '/layout',
         name: 'Layout 布局',
         component: () => import('/packages/components/layout/doc/doc.md')

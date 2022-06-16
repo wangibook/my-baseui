@@ -2,12 +2,13 @@
   <Header />
   <div class="main-container">
     <div class="sidebar">
-      <ul v-for="item in routes" :key="item">
+      <ul v-for="(item,ii) in menuList" :key="item">
+        <p class="title">{{item.name}}</p>
         <li 
-          v-for="(ele,index) in item.children" 
+          v-for="(ele,index) in item.list" 
           :key="ele"
-          :class="{'active': mIndex == index}"
-          @click="goPath(ele,index)">
+          :class="{'active': mIndex == ii + '-' + index}"
+          @click="goPath(ele,ii,index)">
           {{ele.name}}
         </li>
       </ul>
@@ -22,18 +23,18 @@
 import { computed, ref, reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import Header from '@/components/header.vue';
+import menuList from "@/utils/menuList.js";
 
 const router = useRouter()
 const mIndex = ref(sessionStorage.getItem("mIndex") || '0');
 
-const routes = computed(() => router.options.routes)
 
-const goPath = (ele,index) => {
-  mIndex.value = index
+const goPath = (ele,ii,index) => {
+  mIndex.value = ii + '-' + index
   router.push({
     path:ele.path
   })
-  sessionStorage.setItem("mIndex", index);
+  sessionStorage.setItem("mIndex", mIndex.value);
 }
 
 </script>
@@ -88,11 +89,22 @@ header{
     width: 200px;
     height: 100%;
     border-right: 1px solid #eee;
-    text-align: center;
+    .title{
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 24px;
+      margin-left: 40px;
+      padding-bottom: 5px;
+      color: #333;
+      border-bottom: 1px solid #f0f0f0;
+    }
     ul{
       li{
         height: 50px;
         line-height: 50px;
+        padding-left: 40px;
+        font-size: 13px;
+        color: #606266;
         cursor: pointer;
       }
       .active{
