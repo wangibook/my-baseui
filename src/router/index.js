@@ -18,6 +18,11 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior(to, from,savedPosition) {
+    if (to.path !== '/') {
+      document.querySelector(".app-main").scrollTop = 0;
+    }
+  }
 });
 
 export default router;

@@ -30,7 +30,6 @@ import { menuList } from '@/router/routerConfig/index';
 const router = useRouter()
 const mIndex = ref(sessionStorage.getItem("mIndex") || '0');
 
-
 const goPath = (ele,ii,index) => {
   mIndex.value = ii + '-' + index
   router.push({

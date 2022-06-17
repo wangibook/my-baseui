@@ -47,10 +47,16 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const goComponents = () => {
   router.push("/home");
+  sessionStorage.setItem("nIndex", '1');
 }
 const goGitHub = () => {
   window.open("https://github.com/wangibook/my-baseui");
 }
+
+onMounted(() => {
+  sessionStorage.setItem("mIndex", '0-0');
+  sessionStorage.setItem("nIndex", '0');
+})
 </script>
 
 <style lang="scss" scoped>

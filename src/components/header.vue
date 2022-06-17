@@ -45,6 +45,7 @@ const { tools } = state;
 
 const toHome = () => {
   router.push("/");
+  sessionStorage.setItem("nIndex", '0');
 };
 
 const pageView = (item,index) => {
