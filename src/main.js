@@ -3,11 +3,10 @@ import App from './App.vue';
 import router from "./router";
 // 引入全局样式
 import './styles/index.scss';
-import '../public/iconfont/iconfont.css';
+import '~/iconfont/iconfont.css';
 
 import myBaseui from "../packages/index";
 import hljs from "highlight.js";
-// import "highlight.js/styles/color-brewer.css";
 
 const app = createApp(App);
 app.use(router)
