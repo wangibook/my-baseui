@@ -32,6 +32,15 @@ export default [
         name: 'Button 按钮'
       },
       {
+        path: '/link',
+        name: 'Link 链接'
+      },
+    ]
+  },
+  {
+    name: 'Form 表单组件',
+    list: [
+      {
         path: '/input',
         name: 'Input 输入框'
       },

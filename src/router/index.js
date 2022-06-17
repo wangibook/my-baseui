@@ -42,6 +42,11 @@ const routes = [
         component: () => import('/packages/components/button/doc/doc.md')
       },
       {
+        path: '/link',
+        name: 'Link 链接',
+        component: () => import('/packages/components/link/doc/doc.md')
+      },
+      {
         path: '/input',
         name: 'Input 输入框',
         component: () => import('/packages/components/input/doc/doc.md')

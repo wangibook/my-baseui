@@ -1,0 +1,85 @@
+@import '../common/base.scss';
+
+.m-link{
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 12px;
+}
+.m-link--default{
+  color: #333;
+  &:hover {
+    opacity: 0.8;
+    color: $primary;
+  }
+}
+.m-link--primary{
+  color: $primary;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.m-link--success{
+  color: $success;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.m-link--danger {
+  color: $danger;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.m-link--info {
+  color: $info;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.m-link--warning {
+  color: $warning;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+// 禁止
+.is-disabled{
+  cursor: not-allowed;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.m-link--default.is-disabled{
+  color: #c0c4cc;
+}
+.m-link--primary.is-disabled{
+  color: #a0cfff;
+}
+.m-link--success.is-disabled{
+  color: #b3e19d;
+}
+.m-link--danger.is-disabled{
+  color: #fab6b6;
+}
+.m-link--info.is-disabled{
+  color: #c8c9cc;
+}
+.m-link--warning.is-disabled{
+  color: #f3d19e;
+}
+// 下划线
+.is-underline{
+  &:hover{
+    text-decoration: underline;
+  }
+}
