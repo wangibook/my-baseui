@@ -25,7 +25,7 @@
 import { computed, ref, reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import Header from '@/components/header.vue';
-import menuList from "@/utils/menuList.js";
+import { menuList } from '@/router/routerConfig/index';
 
 const router = useRouter()
 const mIndex = ref(sessionStorage.getItem("mIndex") || '0');
