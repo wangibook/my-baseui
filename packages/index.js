@@ -6,6 +6,7 @@ import mCol from "./components/col/index";
 import mSpace from "./components/space/index";
 import mTextarea from "./components/textarea/index";
 import mLink from "./components/link/index";
+import mSelect from "./components/select/index";
 
 // 组件列表
 const components = [
@@ -15,7 +16,8 @@ const components = [
   mCol,
   mSpace,
   mTextarea,
-  mLink
+  mLink,
+  mSelect
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册
@@ -38,5 +40,6 @@ export default {
   mCol,
   mSpace,
   mTextarea,
-  mLink
+  mLink,
+  mSelect
 }
