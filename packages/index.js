@@ -7,6 +7,7 @@ import mSpace from "./components/space/index";
 import mTextarea from "./components/textarea/index";
 import mLink from "./components/link/index";
 import mSelect from "./components/select/index";
+import mTag from "./components/tag/index";
 
 // 组件列表
 const components = [
@@ -17,7 +18,8 @@ const components = [
   mSpace,
   mTextarea,
   mLink,
-  mSelect
+  mSelect,
+  mTag
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册
@@ -41,5 +43,6 @@ export default {
   mSpace,
   mTextarea,
   mLink,
-  mSelect
+  mSelect,
+  mTag
 }

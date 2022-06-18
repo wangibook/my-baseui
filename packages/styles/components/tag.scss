@@ -1,0 +1,154 @@
+@import '../common/base.scss';
+
+.m-tag{
+  background-color: #ecf5ff;
+  display: inline-block;
+  height: 32px;
+  line-height: 30px;
+  padding: 0 12px;
+  font-size: 12px;
+  color: #409eff;
+  border: 1px solid #d9ecff;
+  border-radius: 4px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  &:last-child{
+    margin-right: 0;
+  }
+  .icon-close{
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 12px;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    top: -1px;
+    right: -5px;
+    &:hover{
+      color: #fff;
+      background-color: #409eff;
+      padding: 2px;
+    }
+  }
+}
+.m-tag--success {
+  background-color: #f0f9eb;
+  border-color: #e1f3d8;
+  color: $success;
+  .icon-close{
+    &:hover{
+      color: #fff;
+      background-color: $success;
+      padding: 2px;
+    }
+  }
+}
+.m-tag--danger {
+  background-color: #fef0f0;
+  border-color: #fde2e2;
+  color: $danger;
+  .icon-close{
+    &:hover{
+      color: #fff;
+      background-color: $danger;
+      padding: 2px;
+    }
+  }
+}
+.m-tag--info {
+  background-color: #f4f4f5;
+  border-color: #e9e9eb;
+  color: $info;
+  .icon-close{
+    &:hover{
+      color: #fff;
+      background-color: $info;
+      padding: 2px;
+    }
+  }
+}
+.m-tag--warning {
+  background-color: #fdf6ec;
+  border-color: #faecd8;
+  color: $warning;
+  .icon-close{
+    &:hover{
+      color: #fff;
+      background-color: $warning;
+      padding: 2px;
+    }
+  }
+}
+
+.m-tag--medium{
+  height: 28px;
+  line-height: 26px;
+}
+.m-tag--small{
+  height: 24px;
+  padding: 0 8px;
+  line-height: 22px;
+}
+
+.m-tag--dark{
+  background-color: $primary;
+  border-color: $primary;
+  color: #fff;
+}
+.m-tag--dark.m-tag--success{
+  background-color: $success;
+  border-color: $success;
+  color: #fff;
+}
+.m-tag--dark.m-tag--info{
+  background-color: $info;
+  border-color: $info;
+  color: #fff;
+}
+.m-tag--dark.m-tag--danger{
+  background-color: $danger;
+  border-color: $danger;
+  color: #fff;
+}
+.m-tag--dark.m-tag--warning{
+  background-color: $warning;
+  border-color: $warning;
+  color: #fff;
+}
+
+
+.m-tag--plain{
+  background-color: #fff;
+  border-color: #b3d8ff;
+  color: #409eff;
+}
+.m-tag--plain.m-tag--success{
+  background-color: #fff;
+  border-color: #c2e7b0;
+  color: #67c23a;
+}
+.m-tag--plain.m-tag--info{
+  background-color: #fff;
+  border-color: #d3d4d6;
+  color: #909399;
+}
+.m-tag--plain.m-tag--danger{
+  background-color: #fff;
+  border-color: #fbc4c4;
+  color: #f56c6c;
+}
+.m-tag--plain.m-tag--warning{
+  background-color: #fff;
+  border-color: #f5dab1;
+  color: #e6a23c;
+}
+
+.tag-group-title{
+  margin-right: 10px;
+}

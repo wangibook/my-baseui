@@ -5,8 +5,8 @@
     </div>
     <div class="demo-input" :class="groupClass">
       <i :class="['iconfont','left-icon',leftIcon]" v-if="leftIcon && !showPassword"></i>
-      <input 
-        class="m-input"
+      <input
+        ref="inputRef"
         :class="styleClass"
         :type="showPassword ? (passwordVisible ? 'text': 'password') : 'text' "
         :placeholder="placeholder" 
@@ -78,6 +78,7 @@ export default {
   emits:['update:modelValue','input','focus','blur','change','clear'],
   setup(props,{ emit }) {
     const passwordVisible = ref(false)
+    const inputRef = ref(null)
     const slot = useSlots()
     
     const styleClass = computed(() => {

@@ -7,7 +7,7 @@
     display: inline-block;
     position: relative;
     margin-right: 10px;
-    .m-input{
+    input{
       width:220px;
       height:40px;
       font-size:14px;
@@ -103,3 +103,15 @@
   }
 }
 
+.input-new-tag {
+  width: 90px;
+  margin-left: 10px;
+  margin-top: 0;
+  vertical-align: bottom;
+  .demo-input{
+    width: 100%;
+    input{
+      width: 100%;
+    }
+  }
+}
