@@ -34,3 +34,8 @@ import preview from '@/components/preview.vue';
   <demo3/>
 </div>
 <preview compName="radio" demoName="demo3"/>
+
+
+## 按钮样式
+
+#### 按钮样式的单选组合
