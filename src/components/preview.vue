@@ -82,15 +82,14 @@ onMounted(() => {
   height: auto;
   overflow: hidden;
   border-top: 0;
-  margin: 10px 0 15px 0;
   position: relative;
   transition: all 0.15s ease-out;
   &:hover {
     box-shadow: 0px 16px 15px -16px rgb(0 0 0 / 10%);
   }
   pre{
-    padding: 0 15px;
-    margin-top: 0;
+    margin-top: -15px;
+    margin-bottom: 0;
   }
   .showCode{
     width: 100%;

@@ -10,6 +10,11 @@ export const formComponent = [
     component: () => import('/packages/components/textarea/doc/doc.md')
   },
   {
+    path: '/radio',
+    name: 'Radio 单选框',
+    component: () => import('/packages/components/radio/doc/doc.md')
+  },
+  {
     path: '/select',
     name: 'Select 下拉框',
     component: () => import('/packages/components/select/doc/doc.md')
