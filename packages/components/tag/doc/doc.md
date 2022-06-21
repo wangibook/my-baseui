@@ -67,7 +67,7 @@ import preview from '@/components/preview.vue'
 | closable | 是否可关闭 | boolean | — | false |
 | bgColor | 背景色 | string | — | —  |
 | color  | 文字色 | string | — | — |
-| size  | 尺寸 | string | medium / small / mini | — |
+| size  | 尺寸 | string | default / medium / small | — |
 | effect | 主题 | string | dark / light / plain | light |
 
 
@@ -77,6 +77,8 @@ import preview from '@/components/preview.vue'
 | click | 点击 Tag 时触发的事件 | — |
 | close | 关闭 Tag 时触发的事件 | — |
 
+
+<br/>
 
 
 

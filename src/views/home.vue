@@ -75,7 +75,6 @@ const goPath = (ele,ii,index) => {
         .active{
           color: #409eff;
           background-color: #ECF5FF;
-          border-right: 1px solid #409eff;
         }
       }
     }

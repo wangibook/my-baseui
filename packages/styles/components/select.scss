@@ -1,3 +1,5 @@
+@import '../common/base.scss';
+
 .m-select{
   width: 250px;
   position: relative;
@@ -60,6 +62,10 @@
         &:hover {
           background: #f5f7fa;
         }
+        .icon-select-bold{
+          position: absolute;
+          right: 20px;
+        }
       }
       li.m-option-disabled{
         cursor: no-drop;
@@ -67,6 +73,9 @@
         &:hover {
           background-color: #fff;
         }
+      }
+      li.m-option-active{
+        color: $primary;
       }
     }
   }
@@ -82,29 +91,29 @@
 }
 
 // 动画
-// .slide-fade-enter-active {
-//   transition: all 0.2s ease-out;
-// }
-
-// .slide-fade-leave-active {
-//   transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
-// }
-
-// .slide-fade-enter-from,
-// .slide-fade-leave-to {
-//   transform: translateY(-20px);
-//   opacity: 0;
-// }
-
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  opacity: 1;
-  transform: scaleY(1);
-  transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
-  transform-origin: center top;
+.slide-fade-enter-active {
+  transition: all 0.2s ease-out;
 }
-.slide-fade-enter,
+
 .slide-fade-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-20px);
   opacity: 0;
-  transform: scaleY(0);
 }
+
+// .slide-fade-enter-active,
+// .slide-fade-leave-active {
+//   opacity: 1;
+//   transform: scaleY(1);
+//   transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+//   transform-origin: center top;
+// }
+// .slide-fade-enter,
+// .slide-fade-leave-active {
+//   opacity: 0;
+//   transform: scaleY(0);
+// }

@@ -3,6 +3,7 @@ import demo1 from './demo1.vue'
 import demo2 from './demo2.vue'
 import demo3 from './demo3.vue'
 import demo4 from './demo4.vue'
+import demo5 from './demo5.vue'
 import preview from '@/components/preview.vue'
 </script>
 
@@ -40,6 +41,15 @@ import preview from '@/components/preview.vue'
   <demo4/>
 </div>
 <preview compName="select" demoName="demo4"/>
+
+
+## 基础多选
+
+#### 通过设置 multiple 属性来开启多选
+<div class="source">
+  <demo5/>
+</div>
+<preview compName="select" demoName="demo5"/>
 
 
 <br/>
