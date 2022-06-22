@@ -3,7 +3,8 @@
     class="m-radio" 
     :class="[
       {'is-disabled': isDisabled},
-      {'is-checked': selVal == label}
+      {'is-checked': selVal == label},
+      {'is-bordered': border },
     ]">
     <span 
       class="m-radio__input" 
@@ -14,7 +15,8 @@
       <span class="m-radio__inner"></span>
       <input 
         class="m-radio__original"
-        type="radio" 
+        type="radio"
+        :name="name" 
         v-model="selVal" 
         :value="label"
         :disabled="isDisabled" 
@@ -38,23 +40,28 @@ import { ref,nextTick, computed, inject } from 'vue'
 
 const emit = defineEmits(['update:modelValue','change'])
 const props = defineProps({
+  name: String,
   modelValue: String | Number,
   label: String | Number,
   disabled: {
     type: Boolean,
     default: false
+  },
+  border: {
+    type: Boolean,
+    default: false
   }
 })
 
-const groupVal = inject('groupVal','')
+const radioGroup = inject('radioGroup','');
 const changeEvent = inject('changeEvent','');
 const isGroup = computed(() => {
-  return groupVal
+  return radioGroup
 })
 
 const selVal = computed({
   get() {
-    return isGroup.value ? groupVal.value : props.modelValue
+    return isGroup.value ? radioGroup.val.value : props.modelValue
   },
   set(val) {
     if(isGroup.value) {
@@ -66,14 +73,11 @@ const selVal = computed({
 })
 
 const isDisabled = computed(() => {
-  return props.disabled
+  return isGroup.value ? radioGroup.disabled.value || props.disabled : props.disabled
 })
 
-const handleChange = (e) => {
-  // if(props.disabled) return
-  // console.log(selVal);
-  // emit('update:modelValue',e.target.value)
-  // nextTick(() => emit('change', e.target.value))
+const handleChange = () => {
+  nextTick(() => emit('change', selVal.value))
 }
 
 </script>

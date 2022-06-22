@@ -8,7 +8,8 @@ import mTextarea from "./components/textarea/index";
 import mLink from "./components/link/index";
 import mTag from "./components/tag/index";
 import mRadio from "./components/radio/index";
-import mRadioGroup from "./components/radio-group";
+import mRadioGroup from "./components/radio-group/index";
+import mRadigButton from "./components/radio-button/index";
 import mSelect from "./components/select/index";
 
 // 组件列表
@@ -23,6 +24,7 @@ const components = [
   mTag,
   mRadio,
   mRadioGroup,
+  mRadigButton,
   mSelect,
 ]
 
@@ -50,5 +52,6 @@ export default {
   mTag,
   mRadio,
   mRadioGroup,
+  mRadigButton,
   mSelect,
 }

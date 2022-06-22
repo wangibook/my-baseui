@@ -89,3 +89,22 @@
     cursor: no-drop;
   }
 }
+// 边框
+.is-bordered{
+  padding: 12px 20px 0 10px;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  box-sizing: border-box;
+  height: 40px;
+}
+.is-bordered.is-checked{
+  border-color: #409eff;
+  color: #409eff;
+}
+.is-bordered.is-disabled{
+  cursor: not-allowed;
+  border-color: #ebeef5;
+  .m-radio__label{
+    color: #c0c4cc;
+  }
+}
