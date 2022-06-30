@@ -50,7 +50,7 @@ const showOrhideCode = () => {
 const getSourceCode = async () => {
   if(isDev) {
     let msg = await import(/* @vite-ignore */ `/packages/components/${props.compName}/doc/${props.demoName}.vue?raw`)
-    // console.log(msg.default);
+
     sourceCode.value = msg.default
   } else {
     sourceCode.value = await fetch(`/my-baseui/components/${props.compName}/doc/${props.demoName}.vue`).then(res => res.text());
