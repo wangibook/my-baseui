@@ -18,5 +18,10 @@ export const formComponent = [
     path: '/select',
     name: 'Select 下拉框',
     component: () => import('/packages/components/select/doc/doc.md')
+  },
+  {
+    path: '/switch',
+    name: 'Switch 开关',
+    component: () => import('/packages/components/switch/doc/doc.md')
   }
 ]

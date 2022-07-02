@@ -19,14 +19,13 @@
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core';
 export default {
   name: "mTextarea"
 };
 </script>
 
 <script setup>
-import { ref } from 'vue'
+import { ref,computed } from 'vue'
 const emit = defineEmits(['update:modelValue','input','focus','blur'])
 
 const props = defineProps({
