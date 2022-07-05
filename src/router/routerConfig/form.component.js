@@ -15,6 +15,11 @@ export const formComponent = [
     component: () => import('/packages/components/radio/doc/doc.md')
   },
   {
+    path: '/checkbox',
+    name: 'Checkbox 多选框',
+    component: () => import('/packages/components/checkbox/doc/doc.md')
+  },
+  {
     path: '/select',
     name: 'Select 下拉框',
     component: () => import('/packages/components/select/doc/doc.md')

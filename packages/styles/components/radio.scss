@@ -64,6 +64,7 @@
       }
     }
   }
+  // 禁用
   .is-disabled{
     cursor: no-drop;
     color: #c0c4cc;
@@ -83,11 +84,6 @@
 .is-disabled{
   cursor: no-drop;
   color: #c0c4cc;
-  .m-radio__inner{
-    background-color: #f5f7fa;
-    border-color: #e4e7ed;
-    cursor: no-drop;
-  }
 }
 // 边框
 .is-bordered{

@@ -1,20 +1,20 @@
 <template>
   <label 
-    class="m-radio-button" 
+    class="m-checkbox-button"
     :class="[
-      { 'is-active': selVal === label },
-      { 'is-disabled': isDisabled },
+    { 'is-checked': isChecked },
+    { 'is-disabled': isDisabled }
     ]"
   >
     <input 
-      type="radio" 
-      class="m-radio-button__original"
+      type="checkbox" 
+      class="m-checkbox-button__original"
       :name="name"
-      v-model="selVal" 
+      v-model="model"
       :value="label"
       :disabled="isDisabled"
     >
-    <span class="m-radio-button__inner">
+    <span class="m-checkbox-button__inner">
       <slot>{{label}}</slot>
     </span>
   </label>
@@ -22,12 +22,12 @@
 
 <script>
 export default {
-  name: "mRadioButton"
+  name: "mCheckboxButton"
 };
 </script>
 
 <script setup>
-import { computed,inject } from 'vue'
+import { computed,inject } from 'vue';
 const props = defineProps({
   name: String,
   label: String | Number,
@@ -37,38 +37,52 @@ const props = defineProps({
   }
 })
 
-const radioGroup = inject('radioGroup','');
-const changeEvent = inject('changeEvent','');
+const checkboxGroup = inject('checkboxGroup',{});
+
 const isGroup = computed(() => {
-  return radioGroup
+  return checkboxGroup.modelValue ? true : false
 })
 
-const selVal = computed({
+const model = computed({
   get() {
-    return isGroup.value ? radioGroup.val.value : props.label
+    return isGroup.value ? checkboxGroup.modelValue.value : props.modelValue
   },
   set(val) {
-    changeEvent(val)
+    if(isGroup.value) {
+      checkboxGroup.changeEvent(val)
+    } else {
+      emit('update:modelValue',val)
+    }
+  }
+})
+
+const isChecked = computed(() => {
+  if(isGroup.value) {
+    return model.value.includes(props.label);
+  } else {
+    return model.value
   }
 })
 
 const isDisabled = computed(() => {
   return props.disabled
 })
+
 </script>
 
 <style lang="scss" scoped>
-.m-radio-button{
+.m-checkbox-button{
   position: relative;
   display: inline-block;
   outline: none;
-  .m-radio-button__original{
+  .m-checkbox-button__original{
     opacity: 0;
     outline: none;
     position: absolute;
+    margin: 0;
     z-index: -1;
   }
-  .m-radio-button__inner{
+  .m-checkbox-button__inner{
     display: inline-block;
     line-height: 1;
     white-space: nowrap;
@@ -89,29 +103,28 @@ const isDisabled = computed(() => {
     border-radius: 0;
   }
   &:first-child{
-    .m-radio-button__inner{
+    .m-checkbox-button__inner{
       border-left: 1px solid #dcdfe6;
       border-radius: 4px 0 0 4px;
     }
   }
   &:last-child{
-    .m-radio-button__inner{
+    .m-checkbox-button__inner{
       border-radius: 0 4px 4px 0;
     }
   }
 }
-.is-active{
-  .m-radio-button__inner{
+.is-checked{
+  .m-checkbox-button__inner{
     color: #fff;
     background-color: #409eff;
     border-color: #409eff;
   }
 }
-
 .is-disabled{
   cursor: no-drop;
   color: #c0c4cc;
-  .m-radio-button__inner{
+  .m-checkbox-button__inner{
     color: #c0c4cc;
     cursor: not-allowed;
     background-image: none;
@@ -120,4 +133,3 @@ const isDisabled = computed(() => {
   }
 }
 </style>
-

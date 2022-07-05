@@ -11,6 +11,7 @@ import preview from '@/components/preview.vue';
 
 #### 在一组备选项中进行单选
 
+<br/>
 
 ## 基础用法
 要使用 Radio 组件，只需要设置v-model绑定变量，选中意味着变量的值为相应 Radio label属性的值，label可以是String、Number或Boolean

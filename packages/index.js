@@ -12,6 +12,9 @@ import mRadioGroup from "./components/radio-group/index";
 import mRadigButton from "./components/radio-button/index";
 import mSelect from "./components/select/index";
 import mSwitch from "./components/switch/index";
+import mCheckbox from "./components/checkbox/index";
+import mCheckboxGroup from "./components/checkbox-group/index";
+import mCheckboxButton from "./components/checkbox-button/index";
 
 // 组件列表
 const components = [
@@ -28,6 +31,9 @@ const components = [
   mRadigButton,
   mSelect,
   mSwitch,
+  mCheckbox,
+  mCheckboxGroup,
+  mCheckboxButton
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册
@@ -56,5 +62,8 @@ export default {
   mRadioGroup,
   mRadigButton,
   mSelect,
-  mSwitch
+  mSwitch,
+  mCheckbox,
+  mCheckboxGroup,
+  mCheckboxButton
 }
