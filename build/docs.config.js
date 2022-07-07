@@ -9,7 +9,6 @@ export default defineConfig({
     outDir: 'docs',
     chunkSizeWarningLimit: 1500,
     rollupOptions: {
-      external: ["vue", "highlight.js"],
       plugins: [
         externalGlobals({
           vue: 'Vue',
@@ -21,6 +20,10 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             return id.toString().split('node_modules/')[1].split('/')[0].toString();
           }
+        },
+        globals: {
+          vue: 'Vue',
+          'highlight.js': 'highlight.js'
         },
       }
     }
