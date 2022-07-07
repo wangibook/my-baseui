@@ -1,5 +1,6 @@
 import baseConfig from './base.config';
 import { defineConfig } from 'vite';
+import externalGlobals from 'rollup-plugin-external-globals'
 
 export default defineConfig({
   ...baseConfig,
@@ -8,6 +9,12 @@ export default defineConfig({
     outDir: 'docs',
     chunkSizeWarningLimit: 1500,
     rollupOptions: {
+      external: ['highlight.js'],
+      plugins: [
+        externalGlobals({
+          'highlight.js': 'hljs',
+        }),
+      ],
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
