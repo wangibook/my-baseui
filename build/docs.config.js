@@ -12,7 +12,6 @@ export default defineConfig({
       external: ["vue", "highlight.js"],
       plugins: [
         externalGlobals({
-          vue: 'Vue',
           'highlight.js': 'highlight.js'
         }),
       ],
@@ -21,6 +20,9 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             return id.toString().split('node_modules/')[1].split('/')[0].toString();
           }
+        },
+        globals: {
+          'highlight.js': 'highlight.js'
         },
       }
     }
