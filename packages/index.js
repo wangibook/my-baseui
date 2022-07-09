@@ -18,6 +18,7 @@ import mCheckboxButton from "./components/checkbox-button/index";
 import mInputNumber from "./components/input-number/index";
 //Feedback 反馈组件
 import mAlert from "./components/alert/index";
+import mDialog from "./components/dialog/index";
 
 // 组件列表
 const components = [
@@ -38,7 +39,8 @@ const components = [
   mCheckboxGroup,
   mCheckboxButton,
   mInputNumber,
-  mAlert
+  mAlert,
+  mDialog
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册
@@ -72,5 +74,6 @@ export default {
   mCheckboxGroup,
   mCheckboxButton,
   mInputNumber,
-  mAlert
+  mAlert,
+  mDialog
 }
