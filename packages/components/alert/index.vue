@@ -7,7 +7,7 @@
       </span>
       <p class="m-alert__description" v-if="$slots.default && !description"><slot></slot></p>
       <p class="m-alert__description" v-if="description && !$slots.default">{{ description }}</p>
-      <i class="iconfont m-alert__closebtn" :class="closeIconClass" @click="close()" v-show="closable">
+      <i class="iconfont m-alert__closebtn" :class="closeIconClass" @click="close" v-show="closable">
         {{closeText}}
       </i>
     </div>

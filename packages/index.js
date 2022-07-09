@@ -19,6 +19,7 @@ import mInputNumber from "./components/input-number/index";
 //Feedback 反馈组件
 import mAlert from "./components/alert/index";
 import mDialog from "./components/dialog/index";
+import mMessage from "./components/message/index";
 
 // 组件列表
 const components = [
@@ -40,7 +41,7 @@ const components = [
   mCheckboxButton,
   mInputNumber,
   mAlert,
-  mDialog
+  mDialog,
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册
@@ -49,6 +50,7 @@ const install = (Vue) => {
   if (install.installed) return
   // 遍历注册全局组件
   components.map(component => Vue.component(component.name, component))
+  Vue.config.globalProperties.$message = mMessage
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -75,5 +77,6 @@ export default {
   mCheckboxButton,
   mInputNumber,
   mAlert,
-  mDialog
+  mDialog,
+  mMessage
 }

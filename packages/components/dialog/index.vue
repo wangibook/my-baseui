@@ -37,13 +37,13 @@
 
 
 <script>
-import { computed, ref, watch } from '@vue/runtime-core';
 export default {
   name: "mDialog"
 };
 </script>
 
 <script setup>
+import { computed, ref, watch } from 'vue';
 import { useDraggable } from '~/hooks/use-draggable';
 const emit = defineEmits(['update:modelValue','close','open','opened','closed'])
 const props = defineProps({
