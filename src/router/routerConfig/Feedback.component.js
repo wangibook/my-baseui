@@ -14,4 +14,9 @@ export const feedbackComponent = [
     name: 'Message 消息提示',
     component: () => import('/packages/components/message/doc/doc.md')
   },
+  {
+    path: '/drawer',
+    name: 'Drawer 抽屉',
+    component: () => import('/packages/components/drawer/doc/doc.md')
+  },
 ]

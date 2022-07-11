@@ -67,18 +67,17 @@ import preview from '@/components/preview.vue';
 <br/>
 
 ## Attributes
-| 参数      | 说明          | 类型      | 可选值                           | 默认值  |
-|---------- |-------------- |---------- |--------------------------------  |-------- |
+| 参数      | 说明           | 类型      | 可选值                           | 默认值  |
+|---------- |--------------  |---------- |--------------------------------  |-------- |
 | v-model   | 是否显示 Dialog | boolean | — | false |
 | title     | Dialog 的标题，也可通过具名 slot传入 | string    | — | — |
-| width     | Dialog 的宽度 | string    | — | 50% |
+| width     | Dialog 的宽度   | string    | — | 50% |
 | top       | Dialog CSS 中的 margin-top 值 | string | — | 15vh |
 | append-to-body     | Dialog 自身是否插入至 body 元素上。嵌套的 Dialog 必须指定该属性并赋值为 true   | boolean   | — | false |
 | custom-class      | Dialog 的自定义类名 | string    | — | — |
 | close-on-click-modal | 是否可以通过点击 modal 关闭 Dialog | boolean    | — | true |
 | show-close | 是否显示关闭按钮 | boolean    | — | true |
-| before-close | 关闭前的回调，会暂停 Dialog 的关闭 | function(done)，done 用于关闭 Dialog | — | — |
-| center | 是否对头部和底部采用居中布局 | boolean | — | false |
+| center     | 是否对头部和底部采用居中布局 | boolean | — | false |
 
 <br/>
 
