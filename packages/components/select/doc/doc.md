@@ -4,6 +4,7 @@ import demo2 from './demo2.vue'
 import demo3 from './demo3.vue'
 import demo4 from './demo4.vue'
 import demo5 from './demo5.vue'
+import demo6 from './demo6.vue'
 import preview from '@/components/preview.vue'
 </script>
 
@@ -52,6 +53,29 @@ import preview from '@/components/preview.vue'
 <preview compName="select" demoName="demo5"/>
 
 
+## 可搜索
+#### 可以利用搜索功能快速查找选项，通过设置 searchable 属性来开启
+<div class="source">
+  <demo6/>
+</div>
+<preview compName="select" demoName="demo6"/>
+
 <br/>
 
+## Attributes 
+| 参数          | 说明                   | 类型      | 可选值                           | 默认值  |
+|-------------- |---------------------  |---------- |--------------------------------  |-------- |
+| v-model       | 下拉框绑定值，开启多选时类型为array  |  string / array  | — | — |
+| placeholder   | 占位符                 | string    |     —            | 请选择 |
+| multiple      | 是否多选               | boolean   |     —            | false |
+| disabled      | 是否禁用               | boolean   |     —            | false |
+| clearable     | 是否可以清空选项        | boolean   |     —            | false |
+| searchable    | 是否开启过滤搜索        | boolean   |     —            | false |
+| options       | 下拉框数据配置          | array     |     —            | []    |
 
+<br/>
+
+## Events
+| 事件名称      | 说明                  | 回调参数      |  示例     |
+|----------    |---------------        | ----------   | ---------- |
+| change       | 下拉框选中事件         | —            | change = (item) =>{console.log(item)} |
