@@ -18,6 +18,7 @@ import mCheckboxButton from "./components/checkbox-button/index";
 import mInputNumber from "./components/input-number/index";
 // Data 数据展示
 import mProgress from "./components/progress/index";
+import mCard from "./components/card/index";
 //Feedback 反馈组件
 import mAlert from "./components/alert/index";
 import mDialog from "./components/dialog/index";
@@ -45,6 +46,7 @@ const components = [
   mInputNumber,
   //Data 数据展示
   mProgress,
+  mCard,
   //Feedback 反馈组件
   mAlert,
   mDialog,
@@ -83,7 +85,10 @@ export default {
   mCheckboxGroup,
   mCheckboxButton,
   mInputNumber,
+  //Data 数据展示
   mProgress,
+  mCard,
+  //Feedback 反馈组件
   mAlert,
   mDialog,
   mMessage,
