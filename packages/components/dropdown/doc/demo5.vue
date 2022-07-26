@@ -1,7 +1,7 @@
 <template>
   <m-dropdown title="下拉菜单">
     <template #img>
-      <img src="head.png" alt="" />
+      <img src="/head.png" alt="" />
     </template>
     <template #dropdown>
       <m-dropdown-menu>
