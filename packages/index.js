@@ -11,6 +11,9 @@ import mRadio from "./components/radio/index";
 import mRadioGroup from "./components/radio-group/index";
 import mRadigButton from "./components/radio-button/index";
 import mSelect from "./components/select/index";
+import mDropdown from "./components/dropdown/index";
+import mDropdownItem from "./components/dropdown-item/index";
+import mDropdownMenu from "./components/dropdown-menu/index";
 import mSwitch from "./components/switch/index";
 import mCheckbox from "./components/checkbox/index";
 import mCheckboxGroup from "./components/checkbox-group/index";
@@ -39,6 +42,9 @@ const components = [
   mRadioGroup,
   mRadigButton,
   mSelect,
+  mDropdown,
+  mDropdownItem,
+  mDropdownMenu,
   mSwitch,
   mCheckbox,
   mCheckboxGroup,
@@ -80,6 +86,9 @@ export default {
   mRadioGroup,
   mRadigButton,
   mSelect,
+  mDropdown,
+  mDropdownItem,
+  mDropdownMenu,
   mSwitch,
   mCheckbox,
   mCheckboxGroup,
