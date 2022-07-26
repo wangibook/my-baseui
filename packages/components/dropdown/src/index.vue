@@ -54,7 +54,7 @@ const mouseleave = () =>{
 		isShow.value = false
 	}
 }
-const handleClick = () =>{
+const handleClick = (e) =>{
   if (props.disabled) return;
 	if(props.trigger=='click'){
 		isShow.value = !isShow.value

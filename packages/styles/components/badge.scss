@@ -1,0 +1,46 @@
+.m-badge{
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  .m-badge__content{
+    background-color: #f56c6c;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 6px;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid #fff;
+  }
+  .m-badge__content.is-fixed{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    transform: translate(100%,-50%);
+  }
+  .m-badge__content.is-dot{
+    height: 8px;
+    width: 8px;
+    padding: 0;
+    right: 5px;
+    border-radius: 50%;
+  }
+  .m-badge--primary{
+    background-color: #409eff;
+  }
+  .m-badge--success{
+    background-color: #67c23a;
+  }
+  .m-badge--warning{
+    background-color: #e6a23c;
+  }
+  .m-badge--danger{
+    background-color: #f56c6c;
+  }
+  .m-badge--info{
+    background-color: #909399;
+  }
+}

@@ -34,7 +34,6 @@ const props = defineProps({
 const changeEvent = inject('changeEvent','');
 
 const handleChange = (e) => {
-  console.log(props.disabled);
   if(props.disabled) return;
   changeEvent(e)
 }
