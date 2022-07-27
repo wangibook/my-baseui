@@ -3,7 +3,6 @@
     v-for="tag in dynamicTags"
     :key="tag"
     closable
-    :disable-transitions="false"
     @close="handleClose(tag)"
   >
     {{ tag }}

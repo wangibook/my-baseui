@@ -51,15 +51,14 @@ const goPath = (ele,ii,index) => {
     border-right: 1px solid #eee;
     overflow-y: auto;
     .sidebar{
-      width: 200px;
+      width: 250px;
       height: auto;
+      margin-top: 10px;
       box-sizing: border-box;
       .title{
         font-weight: 700;
-        margin-bottom: 8px;
-        line-height: 24px;
+        line-height: 40px;
         margin-left: 40px;
-        padding-bottom: 5px;
         color: #333;
         border-bottom: 1px solid #f0f0f0;
       }

@@ -1,0 +1,97 @@
+@import '../common/base.scss';
+
+.m-progress{
+  position: relative;
+  line-height: 1;
+  .m-progress-bar{
+    padding-right: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    margin-right: -55px;
+    box-sizing: border-box;
+    .m-progress-bar__outer{
+      height: 6px;
+      border-radius: 100px;
+      background-color: #ebeef5;
+      overflow: hidden;
+      position: relative;
+      vertical-align: middle;
+      .m-progress-bar__inner{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background-color: $primary;
+        text-align: right;
+        border-radius: 100px;
+        line-height: 1;
+        white-space: nowrap;
+        transition: width .6s ease;
+        &::after{
+          display: inline-block;
+          content: "";
+          height: 100%;
+          vertical-align: middle;
+        }
+        .m-progress-bar__innerText{
+          display: inline-block;
+          vertical-align: middle;
+          color: #fff;
+          font-size: 12px;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+  .m-progress__text{
+    font-size: 14px;
+    color: #606266;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    line-height: 1;
+    .iconfont{
+      font-size: 15px;
+    }
+  }
+}
+.m-progress--circle,
+.m-progress--dashboard{
+  display: inline-block;
+  position: relative;
+  .m-progress__text{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.is-success{
+  .m-progress-bar__inner{
+    background: $success !important;
+  }
+  .m-progress__text{
+    color: $success;
+  }
+}
+.is-warning{
+  .m-progress-bar__inner{
+    background: $warning !important;
+  }
+  .m-progress__text{
+    color: $warning;
+  }
+}
+.is-error{
+  .m-progress-bar__inner{
+    background: $danger !important;
+  }
+  .m-progress__text{
+    color: $danger;
+  }
+}

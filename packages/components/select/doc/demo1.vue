@@ -1,5 +1,5 @@
 <template>
-  <m-select v-model="selVal" :options="options"></m-select>
+  <m-select v-model="selVal" :options="options" @change="handleChange"></m-select>
 </template>
 
 <script setup>
@@ -11,6 +11,10 @@ const options = [
   { value: 'value2',label: 'Option2'},
   { value: 'value3',label: 'Option3'},
   { value: 'value4',label: 'Option4'},
-  { value: 'value5',label: 'Option5'},
+  { value: 'value5',label: 'Option5'}
 ]
+
+const handleChange = (e) => {
+  console.log(e);
+}
 </script>

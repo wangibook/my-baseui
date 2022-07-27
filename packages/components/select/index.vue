@@ -1,34 +1,42 @@
 <template>
   <div class="m-select" v-inside>
-    <div :class="selectInputClass" @mouseenter="inputHovering = true" @mouseleave="inputHovering = false">
+    <div 
+      :class="selectInputClass" 
+      @mouseenter="inputHovering = true" 
+      @mouseleave="inputHovering = false"
+    >
       <div>
         <input 
           type="text" 
+          :readonly="!searchable"
           :placeholder="placeholder" 
           :value="selectVal" 
           @input="input" 
           :disabled="disabled"
-          >
+        >
         <i class="iconfont icon-arrow-down select-icon" :style="[{ transform: rotate }]" v-show="!showClose"></i>
         <i class="iconfont icon-close select-icon" v-if="showClose"  @click="handleClearClick"></i>
       </div>
     </div>
     <transition name="slide-fade">
       <div class="m-select-option" v-if="isShow">
-        <ul>
-          <li 
-            v-for="(item, index) in options"
-            :key="index"
-            class="m-option-item"
-            :class="{
-              'm-option-disabled':item.disabled,
-              'm-option-active':activeIndex == index || item.selected
-            }"
-            @click="selChange(item, index)">
-            {{item.label}}
-            <i class="iconfont icon-select-bold" v-if="multiple && item.selected"></i>
-          </li>
-        </ul>
+        <div class="m-select-option-find">
+          <ul>
+            <li 
+              v-for="(item, index) in optionsData"
+              :key="index"
+              class="m-option-item"
+              :class="{
+                'm-option-disabled':item.disabled,
+                'm-option-active':activeIndex == index || item.selected || selectVal == item.label
+              }"
+              @click="selChange(item, index)">
+              {{item.label}}
+              <i class="iconfont icon-select-bold" v-if="multiple && item.selected"></i>
+            </li>
+            <p class="no-data" v-if="!optionsData.length">无匹配数据</p>
+          </ul>
+        </div>
       </div>
     </transition>
   </div>
@@ -65,21 +73,12 @@ const props = defineProps({
   multiple: {
     type: Boolean,
     default: false
+  },
+  searchable: {
+    type: Boolean,
+    default: false
   }
 })
-
-props.options.forEach((item, index) => {
-  if (!props.multiple) {
-    item.selected = false;
-  } else {
-    props.modelValue.forEach((item1, index1) => {
-      if (item.value == item1) {
-        item.selected = true;
-      }
-    })
-  }
-});
-
 
 const selectVal = ref(
   props.multiple
@@ -90,12 +89,11 @@ const selectVal = ref(
       })[0].label
     : ""
 );
+const optionsData = ref(props.options || []);
 const isShow = ref(false);
 const activeIndex = ref(-1);
 const rotate = ref("rotate(0deg)");
 const inputHovering = ref(false);
-
-
 
 const showClose = computed(() => {
   return props.clearable && selectVal.value && inputHovering.value
@@ -110,18 +108,23 @@ const selectInputClass = computed(() => {
 const vInside = {
   // el 是select中input区域
   beforeMount(el) {
-    let handler = (e) => {
+    el.handler = (e) => {
       if(props.disabled) return
-  
-      if(el.contains(e.target) && e.target.className.indexOf('m-option-item') == -1) {
-        isShow.value = true
-        rotate.value = "rotate(180deg)"
+      if(el.contains(e.target)) {
+        onFocus()
+        // 选择之后并且没disabled 关闭
+        if(e.target.className.indexOf('m-option-item') > -1 && 
+          e.target.className.indexOf('m-option-disabled') == -1 &&
+          !props.multiple) {
+          onBlur()
+        }
       } else {
-        isShow.value = false
-        rotate.value = "rotate(0deg)"
+        onBlur()
       }
     }
-    document.addEventListener("click", handler);
+    if (typeof document !== "undefined") {
+      document.addEventListener("click", el.handler);
+    }
   },
   unmounted(el) {
     if (typeof document !== "undefined") {
@@ -158,6 +161,27 @@ const selChange = (item,index) => {
   }
 }
 
+const onFocus = () => {
+  isShow.value = true
+  rotate.value = "rotate(180deg)"
+}
+
+const onBlur = () => {
+  isShow.value = false;
+  rotate.value = "rotate(0deg)";
+}
+
+const input = (e) => {
+  selectVal.value = e.target.value;
+  optionsData.value = [];
+  let filterList = props.options.filter((item) => {
+    return item.label.indexOf(e.target.value) > -1;
+  });
+  filterList.forEach((item, index) => {
+    optionsData.value.push(item);
+  });
+};
+
 const handleClearClick = (event) => {
   event.stopPropagation();
   isShow.value = false
@@ -169,5 +193,4 @@ const handleClearClick = (event) => {
 
 <style lang="scss" scoped>
 @import '../../styles/components/select.scss';
-
 </style>
