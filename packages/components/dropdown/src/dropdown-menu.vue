@@ -16,14 +16,14 @@ export default {
 
 <style lang="scss" scoped>
 .m-dropdown-menu{
+  min-width: 90px;
+  height: auto;
   max-height: 194px;
+  white-space: nowrap;
+  overflow-y: auto;
   position: absolute;
   left: 0;
   z-index: 99;
-  white-space: nowrap;
-  min-width: 90px;
-  height: auto;
-  overflow: hidden;
   box-sizing: border-box;
   padding-top: 5px;
   margin-top: 5px;
