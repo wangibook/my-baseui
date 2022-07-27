@@ -28,5 +28,10 @@ export const formComponent = [
     path: '/switch',
     name: 'Switch 开关',
     component: () => import('/packages/components/switch/doc/doc.md')
-  }
+  },
+  {
+    path: '/input-number',
+    name: 'InputNumber 计数器',
+    component: () => import('/packages/components/input-number/doc/doc.md')
+  },
 ]

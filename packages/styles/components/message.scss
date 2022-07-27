@@ -1,0 +1,32 @@
+.m-message{
+  min-width: 350px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: #edf2fc;
+  transition: opacity .3s,transform .4s,top .4s;
+  overflow: hidden;
+  padding: 15px 15px 15px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  i {
+    margin-right: 8px;
+    vertical-align: middle;
+    font-size: 16px;
+    display: inline-block;
+  }
+  .icon-close{
+    opacity: 1;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+}
+.is-center{
+  justify-content: center;
+}

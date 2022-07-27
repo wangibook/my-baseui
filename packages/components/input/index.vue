@@ -40,7 +40,7 @@ export default {
     modelValue: String | Number,
     placeholder: {
       type: String,
-      default: '请输入'
+      default: ''
     },
     disabled: {
       type: Boolean,

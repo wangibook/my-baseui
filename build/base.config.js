@@ -9,7 +9,7 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
-    Markdown(),
+    Markdown()
   ],
   resolve: {
     alias: {

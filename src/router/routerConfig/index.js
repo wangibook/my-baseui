@@ -2,6 +2,7 @@ import { startComponent } from './start.component';
 import { basicComponent } from './basic.component';
 import { formComponent } from './form.component';
 import { dataComponent } from './data.component';
+import { feedbackComponent } from './Feedback.component';
 
 export const menuList = [
   {
@@ -19,6 +20,10 @@ export const menuList = [
   {
     name: 'Data 数据展示',
     list: dataComponent
+  },
+  {
+    name: 'Feedback 反馈组件',
+    list: feedbackComponent
   }
 ]
 
