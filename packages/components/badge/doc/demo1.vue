@@ -17,11 +17,11 @@
       <m-dropdown-menu>
         <m-dropdown-item class="clearfix">
           评论
-          <m-badge class="mark" :value="12" />
+          <m-badge :value="12" />
         </m-dropdown-item>
         <m-dropdown-item class="clearfix">
           回复
-          <m-badge class="mark" :value="5" />
+          <m-badge :value="5" />
         </m-dropdown-item>
       </m-dropdown-menu>
     </template>

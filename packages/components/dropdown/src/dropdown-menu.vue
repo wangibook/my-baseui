@@ -16,6 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .m-dropdown-menu{
+  max-height: 194px;
   position: absolute;
   left: 0;
   z-index: 99;

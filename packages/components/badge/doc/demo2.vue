@@ -11,11 +11,11 @@
       <m-dropdown-menu>
         <m-dropdown-item class="clearfix">
           评论
-          <m-badge class="mark" :value="200" :max="99" />
+          <m-badge :value="200" :max="99" />
         </m-dropdown-item>
         <m-dropdown-item class="clearfix">
           回复
-          <m-badge class="mark" :value="200" :max="10" />
+          <m-badge :value="200" :max="10" />
         </m-dropdown-item>
       </m-dropdown-menu>
     </template>
