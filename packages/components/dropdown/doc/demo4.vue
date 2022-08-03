@@ -1,5 +1,5 @@
 <template>
-  <m-dropdown title="hover 激活">
+  <m-dropdown title="下拉菜单">
     <template #dropdown>
       <m-dropdown-menu>
         <m-dropdown-item icon="icon-search">菜单1</m-dropdown-item>
