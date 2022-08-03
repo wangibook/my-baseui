@@ -94,9 +94,8 @@
           box-sizing: border-box;
           padding: 0 32px 0 20px;
           color: #606266;
+          user-select: none;
           white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
           cursor: pointer;
           &:hover {
             background: #f5f7fa;
@@ -120,6 +119,21 @@
           text-align: center;
           color: #999;
         }
+      }
+      ul::-webkit-scrollbar {
+        display: block;
+        width: 5px;
+        height: 1px;
+      }
+
+      ul::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background: #ccc;
+      }
+
+      ul::-webkit-scrollbar-track {
+        border-radius: 8px;
+        background: #fff;
       }
     }
   }

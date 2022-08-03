@@ -19,4 +19,9 @@ export const dataComponent = [
     name: 'Progress 进度条',
     component: () => import('/packages/components/progress/doc/doc.md')
   },
+  {
+    path: '/tabs',
+    name: 'Tabs 标签页',
+    component: () => import('/packages/components/tabs/doc/doc.md')
+  },
 ]
