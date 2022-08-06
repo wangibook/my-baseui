@@ -24,4 +24,9 @@ export const dataComponent = [
     name: 'Tabs 标签页',
     component: () => import('/packages/components/tabs/doc/doc.md')
   },
+  {
+    path: '/table',
+    name: 'Table 表格',
+    component: () => import('/packages/components/table/doc/doc.md')
+  },
 ]

@@ -30,9 +30,6 @@ const props = defineProps({
   },
 })
 
-const tabsContext = inject("tabsContext");
-
-
 </script>
 
 <style lang="scss" scoped>

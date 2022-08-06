@@ -13,6 +13,7 @@ import preview from '@/components/preview.vue'
 
 #### 用于多个视图、数据切换展示操作
 
+<br/>
 
 ## 基本使用
 #### 基础的、简洁的标签页。Tabs 组件提供了选项卡功能， 默认选中第一个标签页。
