@@ -23,6 +23,10 @@ import mInputNumber from "./components/input-number/index";
 import mProgress from "./components/progress/index";
 import mCard from "./components/card/index";
 import mBadge from "./components/badge/index";
+import mTabs from "./components/tabs/index";
+import mTabPane from "./components/tab-pane/index";
+import mTable from "./components/table/index";
+import mTableColumn from "./components/table-column/index";
 //Feedback 反馈组件
 import mAlert from "./components/alert/index";
 import mDialog from "./components/dialog/index";
@@ -55,6 +59,10 @@ const components = [
   mProgress,
   mCard,
   mBadge,
+  mTabs,
+  mTabPane,
+  mTable,
+  mTableColumn,
   //Feedback 反馈组件
   mAlert,
   mDialog,
@@ -100,6 +108,10 @@ export default {
   mProgress,
   mCard,
   mBadge,
+  mTabs,
+  mTabPane,
+  mTable,
+  mTableColumn,
   //Feedback 反馈组件
   mAlert,
   mDialog,

@@ -31,5 +31,20 @@ export default {
   border: 1px solid #dcdfe6f6;
   border-radius: 4px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  &::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+    height: 1px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #ccc;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: #fff;
+  }
 }
 </style>

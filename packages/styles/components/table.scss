@@ -1,0 +1,107 @@
+.m-table {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex: 1;
+  background-color: #fff;
+  font-size: 14px;
+  color: #606266;
+  position: relative;
+  .table-scroll{
+    height: 100%;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: block;
+      width: 5px;
+      height: 1px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background: #ccc;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      background: #fff;
+    }
+  }
+  .fixed-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .m-table__header{
+    table-layout: fixed;
+    border-collapse: separate;
+    .m-table__cell{
+      min-width: 0;
+      padding: 12px 0;
+      box-sizing: border-box;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      position: relative;
+      text-align: left;
+      border-bottom: 1px solid #ebeef5;
+      .cell{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-break: break-all;
+        line-height: 23px;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  .m-table__body{
+    table-layout: fixed;
+    border-collapse: separate;
+    overflow-y: scroll;
+    .m-table__row{
+      .m-table__cell{
+        min-width: 0;
+        padding: 12px 0;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+        position: relative;
+        text-align: left;
+        border-bottom: 1px solid #ebeef5;
+        .cell{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: normal;
+          word-break: break-all;
+          line-height: 23px;
+          padding-left: 10px;
+          padding-right: 10px;
+          box-sizing: border-box;
+        }
+      }
+    }
+    .m-table-row-highlight{
+      .m-table__cell{
+        background-color: #ecf5ff;
+      }
+    }
+  }
+  .m-table-stripe{
+    .m-table__body{
+      tr:nth-child(2n) {
+        td{
+          background-color: #f8f8f9;
+        }
+      }
+    }
+  }
+  .m-table-border{
+    border: 1px solid #ebeef5;
+    .m-table__cell{
+      border-right: 1px solid #ebeef5;
+    }
+  }
+}
