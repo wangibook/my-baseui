@@ -1,5 +1,13 @@
 <template>
-  <m-select v-model="selVal" :options="options"></m-select>
+  <m-select v-model="selVal">
+    <m-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value"
+      :disabled="item.disabled">
+    </m-option>
+  </m-select>
 </template>
 
 <script setup>

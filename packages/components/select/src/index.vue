@@ -1,22 +1,21 @@
 <template>
   <div class="m-select" v-inside>
     <div 
-      :class="selectInputClass" 
+      class="m-select-input" 
+      :class="selectInputClass"
       @mouseenter="inputHovering = true" 
-      @mouseleave="inputHovering = false"
-    >
-      <div>
-        <input 
-          type="text" 
-          :readonly="!searchable"
-          :placeholder="placeholder" 
-          :value="selectVal" 
-          @input="input" 
-          :disabled="disabled"
-        >
-        <i class="iconfont icon-arrow-down select-icon" :style="[{ transform: rotate }]" v-show="!showClose"></i>
-        <i class="iconfont icon-close select-icon" v-if="showClose"  @click="handleClearClick"></i>
-      </div>
+      @mouseleave="inputHovering = false">
+      <input
+        class="m-select-input__inner"
+        type="text" 
+        :readonly="!searchable"
+        :placeholder="placeholder" 
+        :value="selectVal" 
+        @input="input" 
+        :disabled="disabled"
+      >
+      <i class="iconfont icon-arrow-down select-icon" :style="[{ transform: rotate }]" v-show="!showClose"></i>
+      <i class="iconfont icon-close select-icon" v-if="showClose"  @click="handleClearClick"></i>
     </div>
     <transition name="slide-fade">
       <div class="m-select-option" v-if="isShow">
@@ -49,7 +48,7 @@ export default {
 </script>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref,useSlots, watch } from 'vue'
 
 const emit = defineEmits(["update:modelValue","change"]);
 const props = defineProps({
@@ -57,10 +56,6 @@ const props = defineProps({
   placeholder: {
     type: String,
     default: '请选择'
-  },
-  options: {
-    type: Array,
-    default: () => []
   },
   disabled: {
     type: Boolean,
@@ -80,16 +75,10 @@ const props = defineProps({
   }
 })
 
-const selectVal = ref(
-  props.multiple
-    ? props.modelValue
-    : props.modelValue != ""
-    ? props.options.filter((item) => {
-        return item.value == props.modelValue
-      })[0].label
-    : ""
-);
-const optionsData = ref(props.options || []);
+const slots = useSlots()
+const selectVal = ref(props.modelValue);
+let allData = []
+const optionsData = ref([]);
 const isShow = ref(false);
 const activeIndex = ref(-1);
 const rotate = ref("rotate(0deg)");
@@ -173,13 +162,11 @@ const onBlur = () => {
 
 const input = (e) => {
   selectVal.value = e.target.value;
-  optionsData.value = [];
-  let filterList = props.options.filter((item) => {
-    return item.label.indexOf(e.target.value) > -1;
-  });
-  filterList.forEach((item, index) => {
-    optionsData.value.push(item);
-  });
+
+  let filterList = allData.filter((item) => {
+    return item.label.indexOf(e.target.value) > -1
+  })
+  optionsData.value = filterList
 };
 
 const handleClearClick = (event) => {
@@ -189,8 +176,23 @@ const handleClearClick = (event) => {
   activeIndex.value = -1
   emit("update:modelValue", '');
 }
+
+const updateSlots = () => {
+  if (!slots.default) {
+    optionsData.value = [];
+    return;
+  }
+  const data = slots.default()[0].children
+  optionsData.value = allData = data.map(item => {
+    return item.props
+  })
+} 
+
+onMounted(() => {
+  updateSlots()
+})
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/components/select.scss';
+@import '../../../styles/components/select.scss';
 </style>
