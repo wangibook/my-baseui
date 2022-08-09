@@ -29,4 +29,9 @@ export const dataComponent = [
     name: 'Table 表格',
     component: () => import('/packages/components/table/doc/doc.md')
   },
+  {
+    path: '/pagination',
+    name: 'Pagination 分页',
+    component: () => import('/packages/components/pagination/doc/doc.md')
+  },
 ]
