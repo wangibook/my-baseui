@@ -75,6 +75,15 @@ import preview from '@/components/preview.vue'
 
 <br/>
 
+## Option Attributes
+| 参数      | 说明          | 类型      | 可选值                           | 默认值  |
+|---------- |-------------- |---------- |--------------------------------  |-------- |
+| value     | 选项的值       | string/number/object  | —  | —    |
+| label     | 选项的标签     | string/number          | — | —    |
+| disabled  | 是否禁用该选项 | boolean                | — | false |
+
+<br/>
+
 ## Events
 | 事件名称      | 说明                  | 回调参数      |  示例     |
 |----------    |---------------        | ----------   | ---------- |
