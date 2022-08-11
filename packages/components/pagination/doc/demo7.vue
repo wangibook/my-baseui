@@ -1,0 +1,16 @@
+<template>
+  <m-pagination 
+    :total="200" 
+    show-total 
+    show-sizer 
+    show-elevator>
+  </m-pagination>
+  <m-pagination 
+    :total="200"
+    background 
+    show-total 
+    show-sizer 
+    show-elevator
+    style="margin-top:10px">
+  </m-pagination>
+</template>
