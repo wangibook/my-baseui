@@ -23,7 +23,7 @@
         :parent-data="parentData" 
       />
     </div>
-    <transition>
+    <mCollapseTransition :duration="0.3" animate="linear">
       <div class="m-tree-ul-box" v-if="isShow" v-show="items.isOpen">
         <tree-node 
           v-for="(it,j) in items.children" 
@@ -41,7 +41,7 @@
           :parent-data="items.children">
         </tree-node>
       </div>
-    </transition>
+    </mCollapseTransition>
   </ul>
 </template>
 
@@ -54,6 +54,7 @@ export default {
 <script setup>
 import { ref, computed, onMounted, watch, inject,nextTick } from "vue";
 import nodeContent from './node-content.vue';
+import mCollapseTransition from '../../collapse-transition';
 
 const props = defineProps({
   items:{
