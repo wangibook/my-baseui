@@ -2,11 +2,14 @@
   <img width="200" src="https://wangibook.github.io/my-baseui/logo.png">
 </p>
 
+# my-baseui
+基于 Vue3，Vite2 的轻量级组件库，用于学习研究，欢迎交流
 
 # Docs 
 [my-baseui使用文档](https://wangibook.github.io/my-baseui/#/)
 
-# my-baseui
+# 组件库说明
+目前只是写了二十来个组件，文档侧边栏切换时可能会卡顿，如果想更好的体验，可以clone下来，在本地查看。
 
 ## 安装
 使用npm 或 yarn 安装

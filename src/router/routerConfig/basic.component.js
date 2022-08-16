@@ -5,6 +5,11 @@ export const basicComponent = [
     component: () => import('/packages/components/layout/doc/doc.md')
   },
   {
+    path: '/color',
+    name: 'Color 色彩',
+    component: () => import('/packages/components/color/doc/doc.md')
+  },
+  {
     path: '/icon',
     name: 'Icon 图标',
     component: () => import('/packages/components/icon/doc/doc.md')

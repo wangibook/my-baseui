@@ -50,6 +50,7 @@ const goPath = (ele,ii,index) => {
     height: 100%;
     border-right: 1px solid #eee;
     overflow-y: auto;
+    box-shadow: 0 2px 8px #f0f1f2;
     .sidebar{
       width: 250px;
       height: auto;

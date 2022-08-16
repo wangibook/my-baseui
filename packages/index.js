@@ -29,6 +29,7 @@ import mTabPane from "./components/tab-pane/index";
 import mTable from "./components/table/index";
 import mTableColumn from "./components/table-column/index";
 import mPagination from "./components/pagination/index";
+import mTree from "./components/tree/index";
 //Feedback 反馈组件
 import mAlert from "./components/alert/index";
 import mDialog from "./components/dialog/index";
@@ -67,6 +68,7 @@ const components = [
   mTable,
   mTableColumn,
   mPagination,
+  mTree,
   //Feedback 反馈组件
   mAlert,
   mDialog,
@@ -118,6 +120,7 @@ export default {
   mTable,
   mTableColumn,
   mPagination,
+  mTree,
   //Feedback 反馈组件
   mAlert,
   mDialog,

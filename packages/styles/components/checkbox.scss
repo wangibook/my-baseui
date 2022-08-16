@@ -117,6 +117,14 @@
     cursor: not-allowed;
   }
 }
+.is-disabled.is-indeterminate {
+  .m-checkbox__inner {
+    &::before{
+      background-color: #c0c4cc;
+      border-color: #c0c4cc;
+    }
+  }
+}
 // 边框
 .is-bordered{
   padding: 9px 20px 9px 10px;
