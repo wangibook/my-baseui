@@ -1,4 +1,4 @@
-import mCollapseTransition from './transition';
+import mCollapseTransition from './transition.vue';
 
 mCollapseTransition.install = function (Vue) {
   Vue.component(mCollapseTransition.name, mCollapseTransition);
