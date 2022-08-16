@@ -34,4 +34,9 @@ export const dataComponent = [
     name: 'Pagination 分页',
     component: () => import('/packages/components/pagination/doc/doc.md')
   },
+  {
+    path: '/tree',
+    name: 'Tree 树形控件',
+    component: () => import('/packages/components/tree/doc/doc.md')
+  },
 ]
