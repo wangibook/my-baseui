@@ -1,7 +1,7 @@
 <template>
   <Header />
   <div class="main-container">
-    <aside>
+    <aside @mousemove="mousemove" @mouseleave="mouseleave" :class="{'sidebar-scroll':isEnter}">
       <div class="sidebar">
         <ul v-for="(item,ii) in menuList" :key="item">
           <p class="title">{{item.name}}</p>
@@ -29,6 +29,7 @@ import { menuList } from '@/router/routerConfig/index';
 
 const router = useRouter()
 const mIndex = ref(sessionStorage.getItem("mIndex") || '0');
+const isEnter = ref(false)
 
 const goPath = (ele,ii,index) => {
   mIndex.value = ii + '-' + index
@@ -36,6 +37,14 @@ const goPath = (ele,ii,index) => {
     path:ele.path
   })
   sessionStorage.setItem("mIndex", mIndex.value);
+}
+
+const mousemove = () => {
+  isEnter.value = true
+}
+
+const mouseleave = () => {
+  isEnter.value = false
 }
 
 </script>
@@ -51,9 +60,6 @@ const goPath = (ele,ii,index) => {
     border-right: 1px solid #eee;
     overflow-y: auto;
     box-shadow: 0 2px 8px #f0f1f2;
-    &::-webkit-scrollbar{
-      display: none;
-    }
     .sidebar{
       width: 250px;
       height: auto;
@@ -80,6 +86,23 @@ const goPath = (ele,ii,index) => {
           background-color: #ECF5FF;
         }
       }
+    }
+  }
+  .sidebar-scroll{
+    &::-webkit-scrollbar {
+      display: block;
+      width: 6px;
+      height: 1px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background: #ddd;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      background: #fff;
     }
   }
   .app-main{
