@@ -51,6 +51,9 @@ const goPath = (ele,ii,index) => {
     border-right: 1px solid #eee;
     overflow-y: auto;
     box-shadow: 0 2px 8px #f0f1f2;
+    &::-webkit-scrollbar{
+      display: none;
+    }
     .sidebar{
       width: 250px;
       height: auto;
@@ -83,6 +86,21 @@ const goPath = (ele,ii,index) => {
     flex: 1;
     padding: 20px 50px;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: block;
+      width: 10px;
+      height: 1px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background: #ccc;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      background: #fff;
+    }
   }
 }
 </style>

@@ -12,9 +12,6 @@ import mRadioGroup from "./components/radio-group/index";
 import mRadigButton from "./components/radio-button/index";
 import mSelect from "./components/select/index";
 import mOption from "./components/option/index";
-import mDropdown from "./components/dropdown/index";
-import mDropdownItem from "./components/dropdown-item/index";
-import mDropdownMenu from "./components/dropdown-menu/index";
 import mSwitch from "./components/switch/index";
 import mCheckbox from "./components/checkbox/index";
 import mCheckboxGroup from "./components/checkbox-group/index";
@@ -24,12 +21,18 @@ import mInputNumber from "./components/input-number/index";
 import mProgress from "./components/progress/index";
 import mCard from "./components/card/index";
 import mBadge from "./components/badge/index";
-import mTabs from "./components/tabs/index";
-import mTabPane from "./components/tab-pane/index";
 import mTable from "./components/table/index";
 import mTableColumn from "./components/table-column/index";
 import mPagination from "./components/pagination/index";
 import mTree from "./components/tree/index";
+// Navigation 导航
+import mBreadcrumb from "./components/breadcrumb/index";
+import mBreadcrumbItem from "./components/breadcrumb-item/index";
+import mDropdown from "./components/dropdown/index";
+import mDropdownItem from "./components/dropdown-item/index";
+import mDropdownMenu from "./components/dropdown-menu/index";
+import mTabs from "./components/tabs/index";
+import mTabPane from "./components/tab-pane/index";
 //Feedback 反馈组件
 import mAlert from "./components/alert/index";
 import mDialog from "./components/dialog/index";
@@ -51,9 +54,6 @@ const components = [
   mRadigButton,
   mSelect,
   mOption,
-  mDropdown,
-  mDropdownItem,
-  mDropdownMenu,
   mSwitch,
   mCheckbox,
   mCheckboxGroup,
@@ -63,12 +63,18 @@ const components = [
   mProgress,
   mCard,
   mBadge,
-  mTabs,
-  mTabPane,
   mTable,
   mTableColumn,
   mPagination,
   mTree,
+  //Navigation 导航
+  mBreadcrumb,
+  mBreadcrumbItem,
+  mDropdown,
+  mDropdownItem,
+  mDropdownMenu,
+  mTabs,
+  mTabPane,
   //Feedback 反馈组件
   mAlert,
   mDialog,
@@ -103,9 +109,6 @@ export default {
   mRadigButton,
   mSelect,
   mOption,
-  mDropdown,
-  mDropdownItem,
-  mDropdownMenu,
   mSwitch,
   mCheckbox,
   mCheckboxGroup,
@@ -115,12 +118,18 @@ export default {
   mProgress,
   mCard,
   mBadge,
-  mTabs,
-  mTabPane,
   mTable,
   mTableColumn,
   mPagination,
   mTree,
+  //Navigation 导航
+  mBreadcrumb,
+  mBreadcrumbItem,
+  mDropdown,
+  mDropdownItem,
+  mDropdownMenu,
+  mTabs,
+  mTabPane,
   //Feedback 反馈组件
   mAlert,
   mDialog,

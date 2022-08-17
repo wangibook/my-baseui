@@ -25,11 +25,6 @@ export const formComponent = [
     component: () => import('/packages/components/select/doc/doc.md')
   },
   {
-    path: '/dropdown',
-    name: 'Dropdown 下拉菜单',
-    component: () => import('/packages/components/dropdown/doc/doc.md')
-  },
-  {
     path: '/switch',
     name: 'Switch 开关',
     component: () => import('/packages/components/switch/doc/doc.md')

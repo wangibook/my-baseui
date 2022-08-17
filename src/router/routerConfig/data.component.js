@@ -20,11 +20,6 @@ export const dataComponent = [
     component: () => import('/packages/components/progress/doc/doc.md')
   },
   {
-    path: '/tabs',
-    name: 'Tabs 标签页',
-    component: () => import('/packages/components/tabs/doc/doc.md')
-  },
-  {
     path: '/table',
     name: 'Table 表格',
     component: () => import('/packages/components/table/doc/doc.md')
