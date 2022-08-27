@@ -78,7 +78,7 @@ import preview from '@/components/preview.vue';
 <preview compName="input" demoName="demo7"/>
 
 
-## Attributes
+## Attributes 参数
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
 | type         | 类型   | string  | text | text |
@@ -92,7 +92,7 @@ import preview from '@/components/preview.vue';
 | autofocus | 原生属性，自动获取焦点 | boolean | true, false | false |
 
 
-## Events
+## Events 事件
 | 事件名 | 说明 | 回调参数 |  示例  |
 |----------|--------|---------|--------|
 | blur   | 在 Input 失去焦点时触发 | (event: Event) | blur=(e)=>{console.log(e)} |

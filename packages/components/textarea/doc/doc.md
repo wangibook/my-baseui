@@ -38,7 +38,7 @@ import preview from '@/components/preview.vue'
 <preview compName="textarea" demoName="demo3"/>
 
 
-## Attributes
+## Attributes 参数
 | 参数          | 说明            | 类型            | 可选值         | 默认值   |
 |------------   |---------------- |---------------- |-------------- |-------- |
 | value / v-model | 绑定值         | string / number | —      | —      |
@@ -51,7 +51,7 @@ import preview from '@/components/preview.vue'
 | readonly      | 原生属性，是否只读      | boolean        | —      | false |
 
 
-## Events
+## Events 事件
 | 事件名 | 说明 | 回调参数 |  示例  |
 |----------|--------|---------|--------|
 | input  | 在 Input 值改变时触发  | (value: string \| number) | input=(e)=>{console.log(e)} |
