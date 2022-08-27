@@ -1,3 +1,5 @@
+import colorContent from '/packages/components/color/doc/content.json';
+
 export const basicComponent = [
   {
     path: '/layout',
@@ -7,6 +9,7 @@ export const basicComponent = [
   {
     path: '/color',
     name: 'Color 色彩',
+    content: colorContent,
     component: () => import('/packages/components/color/doc/doc.md')
   },
   {
