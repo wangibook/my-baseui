@@ -1,7 +1,10 @@
+import badgeContent from '/packages/components/badge/doc/content.json';
+
 export const dataComponent = [
   {
     path: '/badge',
     name: 'Badge 卡片',
+    content: badgeContent,
     component: () => import('/packages/components/badge/doc/doc.md')
   },
   {
