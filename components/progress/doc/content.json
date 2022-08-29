@@ -1,0 +1,14 @@
+[
+    {
+        "title": "直线进度条",
+        "active": true
+    }, {
+        "title": "百分比内显"
+    }, {
+        "title": "自定义颜色"
+    }, {
+        "title": "环形进度条"
+    }, {
+        "title": "Attributes"
+    }
+]

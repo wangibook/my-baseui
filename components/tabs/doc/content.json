@@ -1,0 +1,22 @@
+[
+    {
+        "title": "基本用法",
+        "active": true
+    }, {
+        "title": "选项卡样式"
+    }, {
+        "title": "选项卡加图标"
+    }, {
+        "title": "禁用"
+    }, {
+        "title": "位置"
+    }, {
+        "title": "自定义颜色"
+    }, {
+        "title": "Tabs Attributes"
+    }, {
+        "title": "Tabs Events"
+    }, {
+        "title": "Tab-pane Attributes"
+    }
+]
