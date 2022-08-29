@@ -4,10 +4,10 @@
         <aside @mousemove="mousemove" @mouseleave="mouseleave" :class="{ 'sidebar-scroll': isEnter }">
             <div class="sidebar">
                 <ul v-for="(item, ii) in menuList" :key="item">
-                    <p class="title">{{ item.name }}</p>
+                    <p class="title">{{  item.name  }}</p>
                     <li v-for="(ele, index) in item.list" :key="ele" :class="{ 'active': mIndex == ii + '-' + index }"
                         @click="goPath(ele, ii, index)">
-                        {{ ele.name }}
+                        {{  ele.name  }}
                     </li>
                 </ul>
             </div>
@@ -19,7 +19,9 @@
             <div class="content-section">
                 <p class="content-title">内容导航</p>
                 <ul v-for="(item, ii) in state.contentList" :key="item">
-                    <p @click="mainScrollHandler(ii)" class="nav-title" :class="{selected: item.active}">{{ item.title }}</p>
+                    <p @click="mainScrollHandler(ii)" class="nav-title" :class="{ selected: item.active }">
+                        <span class="desc"> {{  item.title  }}</span>
+                    </p>
                     <!-- <li v-for="(ele, index) in item.list" :key="ele" :class="{ 'active': mIndex == ii + '-' + index }"
                         @click="goPath(ele, ii, index)">
                         {{ ele.name }}
@@ -31,7 +33,7 @@
 </template>
 
 <script setup>
-import { computed, ref, reactive, onMounted, nextTick } from 'vue';
+import { computed, ref, reactive, onMounted, nextTick, watch, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
 import Header from '@/components/header.vue';
 import { menuList } from '@/router/routerConfig/index';
@@ -89,25 +91,66 @@ const calcH2TopList = () => {
     state.topList = arr;
 }
 
+let isScrollStatus = false;
+
 const mainScrollHandler = (index) => {
-    // mainScroll.value = document.getElementsByClassName('app-main');
-    // mainScroll.value.scrollTo({
-    //     top: state.topList[index],
-    //     left: 0,
-    //     behavior: 'smooth'
-    // })
-    // mainScroll.scrollTop = state.topList[index];
     confirmContentSlider(index);
+    isScrollStatus = true;
     mainScroll.value?.scrollTo({
         top: state.topList[index] - 70,
         left: 0,
         behavior: 'smooth'
     })
+    setTimeout(() => {
+        isScrollStatus = false;
+    }, 500);
 }
+
+// watch(mainScroll.value, (newValue, oldValue) => {
+//     console.log("new", newValue, "old", oldValue);
+// });
+
+const handleScroll = () => {
+    if (isScrollStatus) return;
+    //获取dom滚动距离
+    const scrollTop = mainScroll.value.scrollTop;
+    // console.log('滚动的距离:' + scrollTop);
+    for (let i = 0; i < state.topList.length; i++) {
+        if (scrollTop > state.topList[i] - 70 && scrollTop <= state.topList[i + 1] - 70) {
+            confirmContentSlider(i);
+            break;
+        }
+    }
+}
+
+let flag = true;
+
+const thorrle = (fn, interval) => {
+    let last = 0;
+    return function () {
+        if (!flag) return false;
+        let context = this;
+        let args = arguments;
+        let now = new Date();
+        if ((now - last) > interval) {
+            last = now;
+            //劫持当前所在的方法返回fn的方法的内容
+            fn.apply(context, args);
+        }
+    }
+}
+
+// onBeforeUnmount(() => {
+//     nextTick(() => {
+//         mainScroll.value.removeEventListener('scroll', () => { }); // 离开当前组件别忘记移除事件监听
+//     })
+// });
+
 
 onMounted(() => {
     nextTick(() => {
         calcH2TopList();
+        mainScroll.value.addEventListener("scroll", thorrle(handleScroll, 500));
     })
 })
 
@@ -193,10 +236,31 @@ onMounted(() => {
                 cursor: pointer;
                 font-size: 15px;
                 padding: 10px 0;
+                position: relative;
+
+                .desc {
+                    margin-left: 10px;
+                }
+
+                &:after {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-right: 4px solid #409eff;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    transition: .3s;
+                }
             }
 
             .selected {
                 color: #409eff;
+
+                &:after {
+                    height: 40%;
+                }
             }
         }
     }
