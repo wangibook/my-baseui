@@ -56,6 +56,7 @@ const goPath = (ele, ii, index) => {
         path: ele.path
     })
     sessionStorage.setItem("mIndex", mIndex.value);
+    confirmContentSlider(0); //初始化 内容导航栏
     setTimeout(() => {
         nextTick(() => {
             calcH2TopList();
@@ -116,7 +117,7 @@ const handleScroll = () => {
     const scrollTop = mainScroll.value.scrollTop;
     // console.log('滚动的距离:' + scrollTop);
     for (let i = 0; i < state.topList.length; i++) {
-        if (scrollTop > state.topList[i] - 70 && scrollTop <= state.topList[i + 1] - 70) {
+        if (scrollTop > state.topList[i] - 80 && scrollTop <= state.topList[i + 1] - 80) {
             confirmContentSlider(i);
             break;
         }
@@ -150,7 +151,7 @@ const thorrle = (fn, interval) => {
 onMounted(() => {
     nextTick(() => {
         calcH2TopList();
-        mainScroll.value.addEventListener("scroll", thorrle(handleScroll, 500));
+        mainScroll.value.addEventListener("scroll", thorrle(handleScroll, 200));
     })
 })
 
