@@ -1,0 +1,26 @@
+[
+    {
+        "title": "基本使用",
+        "active": true
+    }, {
+        "title": "禁用状态"
+    }, {
+        "title": "多选框组"
+    }, {
+        "title": "中间状态"
+    }, {
+        "title": "按钮样式"
+    }, {
+        "title": "带有边框"
+    }, {
+        "title": "Checkbox Attributes"
+    }, {
+        "title": "Checkbox Events"
+    }, {
+        "title": "Checkbox-group Attributes"
+    }, {
+        "title": "Checkbox-group Events"
+    }, {
+        "title": "Checkbox-button Attributes"
+    }
+]

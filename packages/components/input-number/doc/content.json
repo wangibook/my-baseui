@@ -1,0 +1,22 @@
+[
+    {
+        "title": "基础用法",
+        "active": true
+    }, {
+        "title": "禁用状态"
+    }, {
+        "title": "步数"
+    }, {
+        "title": "严格步数"
+    }, {
+        "title": "精度"
+    }, {
+        "title": "按钮位置"
+    }, {
+        "title": "尺寸"
+    }, {
+        "title": "Attributes"
+    }, {
+        "title": "Events"
+    }
+]

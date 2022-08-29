@@ -1,0 +1,22 @@
+[
+    {
+        "title": "基础用法",
+        "active": true
+    }, {
+        "title": "带有背景色的分页"
+    }, {
+        "title": "小型分页"
+    }, {
+        "title": "显示总数"
+    }, {
+        "title": "每页数量"
+    }, {
+        "title": "电梯"
+    }, {
+        "title": "完整功能"
+    }, {
+        "title": "Attributes"
+    }, {
+        "title": "Events"
+    }
+]

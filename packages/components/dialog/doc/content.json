@@ -1,0 +1,22 @@
+[
+    {
+        "title": "基本用法",
+        "active": true
+    }, {
+        "title": "居中布局"
+    }, {
+        "title": "自定义内容"
+    }, {
+        "title": "嵌套的 Dialog"
+    }, {
+        "title": "可拖拽对话框"
+    }, {
+        "title": "使用具名插槽自定义"
+    }, {
+        "title": "Attributes"
+    }, {
+        "title": "Slot"
+    }, {
+        "title": "Events"
+    }
+]
