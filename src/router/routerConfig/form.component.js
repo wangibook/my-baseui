@@ -34,4 +34,9 @@ export const formComponent = [
     name: 'InputNumber 计数器',
     component: () => import('/packages/components/input-number/doc/doc.md')
   },
+  {
+    path: '/time-picker',
+    name: 'TimePicker 时间选择器',
+    component: () => import('/packages/components/time-picker/doc/doc.md')
+  },
 ]

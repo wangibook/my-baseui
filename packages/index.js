@@ -17,6 +17,7 @@ import mCheckbox from "./components/checkbox/index";
 import mCheckboxGroup from "./components/checkbox-group/index";
 import mCheckboxButton from "./components/checkbox-button/index";
 import mInputNumber from "./components/input-number/index";
+import mTimePicker from "./components/time-picker/index";
 // Data 数据展示
 import mProgress from "./components/progress/index";
 import mCard from "./components/card/index";
@@ -59,6 +60,7 @@ const components = [
   mCheckboxGroup,
   mCheckboxButton,
   mInputNumber,
+  mTimePicker,
   //Data 数据展示
   mProgress,
   mCard,
@@ -114,6 +116,7 @@ export default {
   mCheckboxGroup,
   mCheckboxButton,
   mInputNumber,
+  mTimePicker,
   //Data 数据展示
   mProgress,
   mCard,

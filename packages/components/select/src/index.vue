@@ -7,7 +7,8 @@
       @mouseleave="inputHovering = false">
       <input
         class="m-select-input__inner"
-        type="text" 
+        type="text"
+        autocomplete="off" 
         :readonly="!searchable"
         :placeholder="placeholder" 
         :value="selectVal" 

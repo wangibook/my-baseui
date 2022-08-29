@@ -1,0 +1,165 @@
+.m-date-picker-rel{
+  display: inline-block;
+  position: relative;
+  .m-time-picker{
+    display: inline-block;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+    .m-input__prefix{
+      position: absolute;
+      left: 5px;
+      top: 0;
+      color: #c0c4cc;
+      height: 100%;
+      text-align: center;
+      transition: all .3s;
+      .iconfont{
+        width: 25px;
+        height: 100%;
+        line-height: 40px;
+        text-align: center;
+        transition: all .3s;
+      }
+    }
+    .m-input__inner{
+      padding: 0 30px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 4px;
+      border: 1px solid #dcdfe6;
+      font-size: 14px;
+      outline: none;
+      box-sizing: border-box;
+      color: #606266;
+      background-color: transparent;
+      &:focus{
+        outline: none;
+        border-color: #409eff;
+      }
+    }
+    .m-input__suffix{
+      position: absolute;
+      height: 100%;
+      right: 10px;
+      top: 0;
+      text-align: center;
+      color: #c0c4cc;
+      transition: all .3s;
+      cursor: pointer;
+      .iconfont{
+        width: 25px;
+        height: 100%;
+        line-height: 40px;
+        text-align: center;
+        transition: all .3s;
+      }
+    }
+  }
+  .m-time-picker-disabled{
+    cursor: no-drop;
+    .m-input__inner{
+      cursor: no-drop;
+      background-color: #f5f7fa;
+      color: #c0c4cc;
+    }
+  }
+  .m-time-panel{
+    min-width: 100%;
+    height: 200px;
+    border-radius: 4px;
+    margin-top: 8px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    top: 100%;
+    z-index: 99;
+    .m-time-panel-body{
+      display: flex;
+      .m-time-panel__wrap{
+        &.end-picker-time{
+          margin-left: 10px;
+        }
+        .m-time-panel__title{
+          text-align: center;
+          height: 32px;
+          line-height: 32px;
+          margin-bottom: 5px;
+        }
+        .m-time-panel__content{
+          width: 232px;
+          height: auto;
+          box-sizing: border-box;
+          background-color: #fff;
+          border: 1px solid #dcdfe6f6;
+          
+          .m-time-spinner__wrapper{
+            display: inline-block;
+            width: 33%;
+            height: 190px;
+            overflow-y: auto;
+            text-align: center;
+            vertical-align: top;
+            border-left: 1px solid #e3e8ee;
+            box-sizing: border-box;
+            &:first-child{
+              border-left: none;
+            }
+            .m-time-spinner__ul{
+              .m-time-spinner__item{
+                height: 32px;
+                line-height: 32px;
+                font-size: 13px;
+                &:hover{
+                  cursor: pointer;
+                  background: #f5f7fa;
+                }
+              }
+              .cell-selected{
+                color: #39f;
+                background: #f3f3f3;
+              }
+            }
+          }
+        }
+      }
+    }
+    .m-time-panel__footer{
+      border: 1px solid #e4e4e4;
+      border-top: none;
+      padding: 4px;
+      height: 36px;
+      line-height: 25px;
+      text-align: right;
+      box-sizing: border-box;
+      .m-time-panel__btn{
+        border: none;
+        line-height: 28px;
+        padding: 0 5px;
+        margin: 0 5px;
+        cursor: pointer;
+        background-color: transparent;
+        outline: none;
+        font-size: 13px;
+        color: #303133;
+      }
+      .btn__confirm{
+        font-weight: 800;
+        color: #409eff;
+      }
+    }
+  }
+  .is-confirm{
+    height: 232px;
+  }
+  .is-range.is-confirm {
+    height: 270px;
+  }
+  // 是否选择时间范围
+  .is-range{
+    height: 232px;
+    background-color: #fff;
+    border: 1px solid #dcdfe6f6;
+    padding: 8px;
+  }
+}
