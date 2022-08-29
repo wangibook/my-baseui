@@ -18,6 +18,7 @@
       margin: 0;
       box-sizing: border-box;
       color: #606266;
+      background-color: transparent;
       cursor: pointer;
       border: 1px solid #dcdfe6;
       transition: all .2s ease;
@@ -151,16 +152,16 @@
       }
     }
   }
-}
-
-.m-select-input-disabled{
-  input{
-    cursor: not-allowed;
-    background-color: #f5f7fa;
-    border-color: #e4e7ed;
-    color: #c0c4cc;
+  .m-select-input-disabled{
+    .m-select-input__inner{
+      cursor: not-allowed;
+      background-color: #f5f7fa;
+      border-color: #e4e7ed;
+      color: #c0c4cc;
+    }
   }
 }
+
 
 // 动画
 .slide-fade-enter-active {

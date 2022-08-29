@@ -14,6 +14,7 @@
     box-sizing: border-box;
     font-size:14px;
     color:#606266;
+    background-color: transparent;
     font-family: auto;
     &:focus,&:active,&:focus-visible{
       border:1px solid #0e80eb;
@@ -21,6 +22,9 @@
   }
   .m-textarea-disabled{
     cursor: not-allowed;
+    background-color: #f5f7fa;
+    border-color: #e4e7ed;
+    color: #c0c4cc;
     &:focus,&:active,&:focus-visible{
       border:1px solid #dcdfe6;
     }

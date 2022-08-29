@@ -1,0 +1,20 @@
+[
+    {
+        "title": "禁用状态",
+        "active": true
+    }, {
+        "title": "有禁用选项"
+    }, {
+        "title": "可清空单选"
+    }, {
+        "title": "基础多选"
+    }, {
+        "title": "可搜索"
+    }, {
+        "title": "Attributes"
+    }, {
+        "title": "Option Attributes"
+    }, {
+        "title": "Events"
+    }
+]

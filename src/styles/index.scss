@@ -30,7 +30,6 @@ table{
   display: none;
 }
 
-
 .ml-10{
   margin-left: 10px;
 }
@@ -97,3 +96,5 @@ table{
   border-radius: 4px 4px 0 0;
   box-sizing: border-box;
 }
+
+input:-webkit-autofill { box-shadow: 0 0 0px 1000px white inset;}

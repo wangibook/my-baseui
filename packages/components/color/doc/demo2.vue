@@ -47,7 +47,7 @@
 import { reactive } from 'vue';
 const state1 = reactive({
     currentColor: '#67C23A',
-    colorList: ['#67C23A', '##529B2E', '#95D475', '#B3E19D', '#D1EDC4', '#E1F3D8', '#F0F9EB']
+    colorList: ['#67C23A', '#529B2E', '#95D475', '#B3E19D', '#D1EDC4', '#E1F3D8', '#F0F9EB']
 })
 
 const state2 = reactive({

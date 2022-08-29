@@ -87,13 +87,14 @@ header{
       font-weight: 400;
       font-size: 16px;
       padding: 8px 3px;
-      margin-left: 25px;
+      margin-left: 50px;
       border-bottom: 2px solid #fff;
       display: inline-block;
       float: none;
       line-height: normal;
       transition: all .2s ease;
       cursor: pointer;
+      color: #333;
     }
     .active{
       color: #409eff;
