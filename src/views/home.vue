@@ -33,10 +33,11 @@
 </template>
 
 <script setup>
-import { computed, ref, reactive, onMounted, nextTick, watch, onBeforeUnmount } from 'vue';
+import { computed, ref, reactive, onMounted, nextTick, watch, onBeforeMount } from 'vue';
 import { useRouter } from 'vue-router';
 import Header from '@/components/header.vue';
 import { menuList } from '@/router/routerConfig/index';
+import emitter from "/packages/utils/bus";
 
 const router = useRouter()
 const mIndex = ref(sessionStorage.getItem("mIndex") || '0');
@@ -153,7 +154,16 @@ onMounted(() => {
         calcH2TopList();
         mainScroll.value.addEventListener("scroll", thorrle(handleScroll, 200));
     })
+    emitter.on('previewChange', (res) => {
+        setTimeout(() => {
+            calcH2TopList();
+        }, 500);
+    })
 })
+
+onBeforeMount(() => {
+    emitter.off('previewChange');
+});
 
 </script>
 
