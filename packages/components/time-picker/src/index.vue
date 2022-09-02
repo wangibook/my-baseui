@@ -1,5 +1,5 @@
 <template>
-  <div class="m-date-picker-rel" v-inside>
+  <div class="m-time-picker-rel" v-inside>
     <div class="m-time-picker" :class="selectInputClass">
       <span class="m-input__prefix">
         <i class="iconfont icon-time"></i>
@@ -238,7 +238,6 @@ const calcInputText = () => {
 
 // 更新startValue和endValue值
 const updateCurrentValue = (newVal, oldVal) => {
-  // console.log(newVal);
   if(isRange.value) {
     // 时间范围选择
     state.startValue = getCorrectTime(newVal[0]);
@@ -279,7 +278,7 @@ const handleClear = (event) => {
 }
 
 const handleConfirm = () => {
-  isShow.value = false
+  isShow.value = false;
   const emitVal = getEmitValue();
   emits('on-confirm',emitVal)
 }

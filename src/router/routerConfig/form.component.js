@@ -56,4 +56,9 @@ export const formComponent = [
     content: timePickerContent,
     component: () => import('/packages/components/time-picker/doc/doc.md')
   },
+  {
+    path: '/date-picker',
+    name: 'DatePicker 日期选择器',
+    component: () => import('/packages/components/date-picker/doc/doc.md')
+  },
 ]

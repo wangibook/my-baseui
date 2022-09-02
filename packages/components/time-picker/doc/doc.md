@@ -4,7 +4,6 @@ import demo2 from './demo2.vue'
 import demo3 from './demo3.vue'
 import demo4 from './demo4.vue'
 import demo5 from './demo5.vue'
-// import demo6 from './demo6.vue'
 import preview from '@/components/preview.vue'
 </script>
 
@@ -31,7 +30,7 @@ import preview from '@/components/preview.vue'
 <preview compName="time-picker" demoName="demo2"/>
 
 
-## 禁用
+## 禁用状态
 #### 可以设置 disabled 属性来实现禁用状态
 <div class="source">
   <demo3/>

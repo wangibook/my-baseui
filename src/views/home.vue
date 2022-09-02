@@ -66,7 +66,7 @@ const goPath = (ele, ii, index) => {
 
 const confirmContentSlider = (index) => {
     let arr = state.contentList;
-    arr.forEach((item, indexPath) => {
+    arr && arr.forEach((item, indexPath) => {
         item.active = false;
         if (indexPath == index) {
             item.active = true;
