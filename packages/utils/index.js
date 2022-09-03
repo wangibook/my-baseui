@@ -94,3 +94,58 @@ export function formatOutputValue(val, rule) {
   const reg = /(HH)|(H)|(hh)|(h)|(mm)|(m)|(ss)|(s)/g;
   return rule.replace(reg, (v) => maps[v]);
 }
+
+// 生成格式化后的数字
+export function formatOutputDate(val, rule) {
+  if(!val || val === 'undefined' || val === 'null') return
+  const houtAt12 = (v) => (v >= 12 ? v - 12 : v);
+  const t = parseDate(val);
+  const maps = {
+    yyyy: t.year, // 年，eg：2019
+    MM: fillZero(t.month + 1), // 月, 2位，eg：03
+    M: t.month + 1, // 月, 1位，eg：3
+    dd: fillZero(t.date), // 日, 2位，eg：03
+    d: t.date, // 日, 1位，eg：03
+    HH: fillZero(t.hour), // 24时制，2位展示
+    H: t.hour, // 24时制，1位展示
+    hh: fillZero(houtAt12(t.hour)), // 12时制，2位展示
+    h: houtAt12(t.hour), // 12时制，1位展示
+    mm: fillZero(t.minute), // 分钟，2位展示
+    m: t.minute, // 分钟，1位展示
+    ss: fillZero(t.second), // 秒，2位展示
+    s: t.second, // 秒，2位展示
+  };
+  const regStr = Object.keys(maps).map((e) => `(${e})`).join('|');
+  const reg = new RegExp(regStr, 'g');
+  return rule.replace(reg, (v) => maps[v]);
+}
+
+// 解析日期
+export function parseDate(value) {
+  const t = value ? new Date(value) : new Date(Date.now());
+  return {
+    year: t.getFullYear(),
+    month: t.getMonth(),
+    date: t.getDate(),
+    day: t.getDay(),
+    hour: t.getHours(),
+    minute: t.getMinutes(),
+    second: t.getSeconds(),
+    timeStamp: t.getTime(),
+  };
+}
+
+// 获取时间戳
+export function getTime(...arg) {
+  return new Date(...arg).getTime();
+}
+
+export function checkToday(year, month, date) {
+  const today = parseDate(Date.now());
+  return today.year === year && today.month === month && today.date === date;
+}
+
+
+export function checkSelectDay(obj,item) {
+  return obj.year === item.Y && obj.month === item.M && obj.date === item.D;
+}

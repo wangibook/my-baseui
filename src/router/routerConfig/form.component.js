@@ -6,6 +6,7 @@ import selectContent from '/packages/components/select/doc/content.json';
 import switchContent from '/packages/components/switch/doc/content.json';
 import inputnumberContent from '/packages/components/input-number/doc/content.json';
 import timePickerContent from '/packages/components/time-picker/doc/content.json';
+import datePickerContent from '/packages/components/date-picker/doc/content.json';
 
 export const formComponent = [
   {
@@ -55,5 +56,11 @@ export const formComponent = [
     name: 'TimePicker 时间选择器',
     content: timePickerContent,
     component: () => import('/packages/components/time-picker/doc/doc.md')
+  },
+  {
+    path: '/date-picker',
+    name: 'DatePicker 日期选择器',
+    content: datePickerContent,
+    component: () => import('/packages/components/date-picker/doc/doc.md')
   },
 ]

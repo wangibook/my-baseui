@@ -4,21 +4,24 @@
     "active": true
   },
   {
-    "title": "时间格式"
+    "title": "日期格式"
   },
   {
     "title": "禁用状态"
   },
   {
-    "title": "时间范围"
+    "title": "日期范围"
   },
   {
     "title": "带有确认操作"
   },
   {
-    "title": "TimePicker Attributes"
+    "title": "快捷方式"
   },
   {
-    "title": "TimePicker Events"
+    "title": "DatePicker Attributes"
+  },
+  {
+    "title": "DatePicker Events"
   }
 ]

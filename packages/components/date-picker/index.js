@@ -1,0 +1,8 @@
+import mDatePicker from './src/index.vue';
+
+mDatePicker.install = (Vue) => {
+  Vue.component(mDatePicker.name,mDatePicker)
+}
+
+export default mDatePicker;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     

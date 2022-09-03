@@ -1,7 +1,7 @@
-.m-time-picker-rel{
+.m-date-picker-rel{
   display: inline-block;
   position: relative;
-  .m-time-picker{
+  .m-date-picker{
     display: inline-block;
     font-size: 14px;
     box-sizing: border-box;
@@ -56,7 +56,7 @@
       }
     }
   }
-  .m-time-picker-disabled{
+  .m-date-picker-disabled{
     cursor: no-drop;
     .m-input__inner{
       cursor: no-drop;
@@ -64,75 +64,73 @@
       color: #c0c4cc;
     }
   }
-  .m-time-panel{
-    min-width: 100%;
-    height: 200px;
-    border-radius: 4px;
-    margin-top: 8px;
-    background-color: #fff;
+  .m-date-panel{
     position: absolute;
-    bottom: 0;
-    top: 100%;
+    color: #606266;
+    border: 1px solid #e4e7ed;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    background: #fff;
+    border-radius: 4px;
+    margin: 5px 0;
     z-index: 99;
-    .m-time-panel-body{
-      display: flex;
-      .m-time-panel__wrap{
-        &.end-picker-time{
-          margin-left: 10px;
-        }
-        .m-time-panel__title{
-          text-align: center;
-          height: 32px;
-          line-height: 32px;
-          margin-bottom: 5px;
-        }
-        .m-time-panel__content{
-          width: 232px;
-          height: auto;
-          box-sizing: border-box;
-          background-color: #fff;
-          border: 1px solid #dcdfe6f6;
-          
-          .m-time-spinner__wrapper{
-            display: inline-block;
-            width: 33%;
-            height: 190px;
-            overflow-y: auto;
-            text-align: center;
-            vertical-align: top;
-            border-left: 1px solid #e3e8ee;
-            box-sizing: border-box;
-            &:first-child{
-              border-left: none;
-            }
-            .m-time-spinner__ul{
-              .m-time-spinner__item{
-                height: 32px;
-                line-height: 32px;
-                font-size: 13px;
-                &:hover{
-                  cursor: pointer;
-                  background: #f5f7fa;
-                }
-              }
-              .cell-selected{
-                color: #39f;
-                background: #f3f3f3;
-              }
-            }
-          }
+    .m-date-panel-sidebar{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      border-right: 1px solid #e4e4e4;
+      box-sizing: border-box;
+      padding-top: 6px;
+      padding-left: 12px;
+      background-color: #fff;
+      overflow: auto;
+      .m-date-panel-shortcut{
+        line-height: 28px;
+        font-size: 14px;
+        color: #606266;
+        cursor: pointer;
+        &:hover{
+          color: #409eff;
         }
       }
     }
-    .m-time-panel__footer{
-      border: 1px solid #e4e4e4;
-      border-top: none;
+    .m-date-panel-body{
+      display: flex;
+      .m-date-panel__wrap{
+        //临时固定
+        width: 320px;
+        .m-date-picker__header{
+          display: flex;
+          padding: 6px 12px;
+          align-items: center;
+          text-align: center;
+          .m-date-picker__btn{
+            width: 30px;
+            color: #303133;
+            &:hover{
+              color: #409eff;
+            }
+          }
+          .m-date-picker__header-label{
+            flex: 1;
+          }
+        }
+        .m-picker-panel__content{
+          padding: 10px;
+        }
+      }
+      .end-picker-date{
+        border-left: 1px solid #e4e4e4;
+      }
+    }
+    .m-date-panel__footer{
+      border-top: 1px solid #e4e4e4;
       padding: 4px;
       height: 36px;
       line-height: 25px;
       text-align: right;
       box-sizing: border-box;
-      .m-time-panel__btn{
+      .m-date-panel__btn{
         border: none;
         line-height: 28px;
         padding: 0 5px;
@@ -148,18 +146,5 @@
         color: #409eff;
       }
     }
-  }
-  .is-confirm{
-    height: 232px;
-  }
-  .is-range.is-confirm {
-    height: 270px;
-  }
-  // 是否选择时间范围
-  .is-range{
-    height: 232px;
-    background-color: #fff;
-    border: 1px solid #dcdfe6f6;
-    padding: 8px;
   }
 }
