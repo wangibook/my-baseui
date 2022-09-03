@@ -1,6 +1,10 @@
 <template>
   <div class="m-date-picker-rel" v-inside>
-    <div class="m-date-picker" :class="selectInputClass">
+    <div 
+      class="m-date-picker" 
+      :class="selectInputClass"
+      @mouseenter="inputHovering = true"
+      @mouseleave="inputHovering = false">
       <span class="m-input__prefix">
         <i class="iconfont icon-calendar"></i>
       </span>
@@ -12,7 +16,7 @@
         :disabled="disabled"
         :readonly="readonly"
       >
-      <span class="m-input__suffix" @click="handleClear">
+      <span class="m-input__suffix" @click="handleClear" v-if="showClose">
         <i class="iconfont icon-error"></i>
       </span>
     </div>
@@ -25,14 +29,26 @@
         }" 
         v-if="isShow" 
         @click.stop
-      >
-        <div class="m-date-panel-body">
+      > 
+        <div class="m-date-panel-sidebar" v-if="shortcuts.length">
+          <div 
+            class="m-date-panel-shortcut" 
+            v-for="(item,index) in shortcuts" 
+            :key="index" 
+            @click="handleShortcutClick(item)">
+            {{item.text}}
+          </div>
+        </div>
+        <div class="m-date-panel-body" :style="bodyStyle">
           <date-spinner
             ref="panelStart"
             v-model="startCurrent"
             :selectedStart="selectedStart"
+            :selectedEnd="selectedEnd"
             name="left"
             :unlinkPanels="unlinkPanels"
+            :isRange="isRange"
+            :rangeStep="rangeStep"
             @item-click="(item) => handlePickerClick('start',item)"
             @linkagePanel="(obj) => linkagePanel(panelEnd,obj)">
           </date-spinner>
@@ -41,9 +57,12 @@
             ref="panelEnd"
             v-if="isRange" 
             v-model="endCurrent"
+            :selectedStart="selectedStart"
             :selectedEnd="selectedEnd"
             name="right"
             :unlinkPanels="unlinkPanels"
+            :isRange="isRange"
+            :rangeStep="rangeStep"
             @item-click="(item) => handlePickerClick('end',item)"
             @linkagePanel="(obj) => linkagePanel(panelStart,obj)">
           </date-spinner>
@@ -66,7 +85,7 @@ export default {
 <script setup>
 import { reactive, ref, computed, toRefs, watch,nextTick, watchEffect } from 'vue';
 import dateSpinner from './date-spinner.vue';
-import { formatOutputDate,deepCopy,parseDate } from '~/utils/index';
+import { formatOutputDate,deepCopy,parseDate,getTime } from '~/utils/index';
 
 const emits = defineEmits(['on-change','on-confirm','on-clear'])
 const props = defineProps({
@@ -79,12 +98,16 @@ const props = defineProps({
   type: {
     type: String,
     default: 'date',
-    validator: (val) => ['date', 'daterange', 'datetime', 'datetimerange'].includes(val),
+    validator: (val) => ['date', 'daterange'].includes(val),
   },
   // 展示的时间格式
   format: {
     type: String,
     default: 'yyyy-MM-dd',
+  },
+  clearable: {
+    type: Boolean,
+    default: true,
   },
   disabled: {
     type: Boolean,
@@ -107,8 +130,13 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  shortcuts: {
+    type: Array,
+    default: () => []
+  }
 })
 
+const inputHovering = ref(false);
 const isShow = ref(false);
 const panelStart = ref(null);
 const panelEnd = ref(null);
@@ -119,7 +147,8 @@ const state = reactive({
   startCurrent: '',
   endCurrent: '',
   selectedStart: null,  // 选择的开始日期
-  selectedEnd: null
+  selectedEnd: null,
+  rangeStep: 'none',  // 范围选择时，当前选择所处的步骤，'none'未开始, 'start'已开始, 'end'完成
 })
 
 const selectInputClass = computed(() => {
@@ -128,9 +157,19 @@ const selectInputClass = computed(() => {
   }
 })
 
+const showClose = computed(() => {
+  return props.clearable && state.inputText && inputHovering.value
+})
+
 // 是否选择日期范围
 const isRange = computed(() => {
-  return props.type === 'daterange' || props.type === 'datetimerange';
+  return props.type === 'daterange'
+})
+
+const bodyStyle = computed(() => {
+  return {
+    'marginLeft': props.shortcuts.length ? '100px' : 0
+  }
 })
 
 // 监听传入的value变化
@@ -178,15 +217,16 @@ const calcInputText = () => {
 
 // 更新startValue和endValue值
 const updateCurrentValue = (newVal) => {  
+  // console.log('newVal',newVal);
   // 单个选择
   const handleSingle = () => {
     state.startValue = newVal;
     state.selectedStart = newVal;
-    state.startCurrent = newVal
+    state.startCurrent = newVal;
   }
   // 范围选择
   const handleRange = () => {
-    if(newVal.length == 0) {
+    if(!newVal) {
       state.startValue = null
       state.endValue = null
       state.selectedStart = null
@@ -212,7 +252,6 @@ const updateCurrentValue = (newVal) => {
     // 单个选择
     handleSingle()
   }
-
   calcInputText()
 }
 
@@ -234,36 +273,46 @@ const handlePickerClick = (type,arg) => {
 
 const pickerClick = (type,arg) => {
   const t = new Date(arg.Y, arg.M, arg.D);
-  const startVal = getValue(t);
   let emitVal = null;
-  // 点击开始日期项
-  if(type == 'start') {
-    if(isRange.value) {
+
+  // 如果是非范围选择
+  if(!isRange.value) {
+    const startVal = getValue(t);
+    state.selectedStart = startVal;
+    emitVal = startVal;
+    noConfirmClear()
+  }
+  // 如果是范围选择
+  if(isRange.value) {
+    if(state.rangeStep === 'none' || state.rangeStep === 'end') {
+      state.rangeStep = 'start';
+      const startVal = getValue(t);
       state.selectedStart = startVal;
-      emitVal = [startVal, null];
+      state.selectedEnd = '';
+      emitVal = [startVal];
     } else {
-      state.selectedStart = startVal;
-      emitVal = startVal;
+      state.rangeStep = 'end';
+      const t1 = getTime(t);
+      const t2 = getTime(state.selectedStart);
+      const t1Format = getValue(Math.min(t1, t2))
+      const t2Format = getValue(Math.max(t1, t2))
+      state.startValue = t1Format;
+      state.endValue = t2Format;
+      state.selectedStart = t1Format;
+      state.selectedEnd = t2Format;
+      emitVal = [t1Format, t2Format];
+      noConfirmClear()
     }
   }
-
-  // 点击结束日期项
-  if(type === 'end') {
-    const t2 = new Date(arg.Y, arg.M, arg.D);
-    const start = deepCopy(state.startValue);
-    const end = getValue(t2)
-    state.selectedEnd = end;
-    emitVal = [start, end];
-  }
   updateCurrentValue(emitVal);
-  emits('on-change',emitVal)
+  emits('on-change',emitVal);
 }
 
 // 数据面板联动（切换左侧面板，右侧也会跟着联动，反之亦然）
 const linkagePanel = (ref,obj) => {
   const type = obj.type;
   nextTick(() => {
-    ref.togglePanelData(type);
+    ref && ref.togglePanelData(type);
   })
 }
 
@@ -278,6 +327,7 @@ const handleClear = (event) => {
   defaultNowVal()
   state.selectedStart = null;
   state.selectedEnd = null;
+  emits('on-clear')
 }
 
 // 确定
@@ -296,7 +346,27 @@ const getValue = (val) => {
   return formatOutputDate(val, 'yyyy-MM-dd');
 }
 
-const { inputText,startValue,endValue,selectedStart,selectedEnd,startCurrent,endCurrent } = toRefs(state);
+const noConfirmClear = () => {
+  if(!props.confirm) {
+    isShow.value = false;
+  }
+}
+
+const handleShortcutClick = (item) => {
+  if(!item.value) return;
+  let val = null;
+  if(isRange.value) {
+    const s1 = item.value()[0]
+    const s2 = item.value()[1]
+    val = [s1,s2]
+  } else {
+    val = getValue(item.value())
+  }
+  updateCurrentValue(val)
+  noConfirmClear()
+}
+
+const { inputText,startValue,endValue,selectedStart,selectedEnd,startCurrent,endCurrent,rangeStep } = toRefs(state);
 
 </script>
 

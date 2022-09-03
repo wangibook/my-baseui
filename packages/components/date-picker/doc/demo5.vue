@@ -5,8 +5,8 @@
 
 <script setup>
 import { ref } from 'vue';
-const value1 = ref('2022-08-30')
-const value2 = ref(['2022-08-30','2022-09-15'])
+const value1 = ref()
+const value2 = ref([])
 
 const onConfirm = (val) => {
   console.log(val);
@@ -15,6 +15,6 @@ const onConfirm = (val) => {
 
 <style>
 .date{
-  margin-left: 30px;
+  margin-left: 50px;
 }
 </style>

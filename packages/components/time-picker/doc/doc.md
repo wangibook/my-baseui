@@ -63,6 +63,7 @@ import preview from '@/components/preview.vue'
 | readonly        | 完全只读，开启后不会弹出选择器 | boolean          | —                       | false    |
 | disabled        | 禁用                         | boolean          | —                       | false     |
 | format          | 时间格式化                   | string     | 小时：`HH`，分：`mm`，秒：`ss`  | 'HH:mm:ss' |
+| clearable       | 是否显示清除按钮              | boolean           | —                       |  true     |
 | separator        | 选择范围时的分隔符           | string            | —                      |  	'-'     |
 
 <br/>
@@ -72,4 +73,4 @@ import preview from '@/components/preview.vue'
 |---------------------    |--------------          |---------      |
 | on-change               | 时间发生变化时触发      | 格式化后的时间 |
 | on-confirm              | 点击确定按钮时触发      | 格式化后的时间 |
-| on-clear                | 在清空日期时触发        | —             |
+| on-clear                | 在清空时间时触发        | —             |

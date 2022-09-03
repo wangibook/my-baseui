@@ -1,7 +1,8 @@
 <template>
   <div class="m-date-panel__wrap">
+
     <div class="m-date-picker__header">
-      <template v-if="unlinkPanels || name === 'left'">
+      <template v-if="unlinkPanels || name === 'left' || !isRange ">
         <m-button 
           class="m-date-picker__btn" 
           type="text"
@@ -16,7 +17,7 @@
         </m-button>
       </template>
       <span class="m-date-picker__header-label">{{titleText}}</span>
-      <template v-if="unlinkPanels || name === 'right'">
+      <template v-if="unlinkPanels || name === 'right' || !isRange ">
         <m-button 
           class="m-date-picker__btn" 
           type="text"
@@ -32,7 +33,6 @@
       </template>
     </div>
     <div class="m-picker-panel__content">
-      {{modelValue}}--
       <table>
         <thead>
           <tr>
@@ -49,7 +49,8 @@
               :key="tdIndex"
               :class="tdClasss(dataList[trIndex * 7 + tdIndex])"
               @click="handleItemClick(dataList[trIndex * 7 + tdIndex])"
-            >
+              @mouseover="handleItemMouseover(dataList[trIndex * 7 + tdIndex], dataList)"
+            >  
               <span class="m-picker-panel__cell">
                 {{dataList[trIndex * 7 + tdIndex].D}}
               </span>
@@ -71,13 +72,22 @@ const props = defineProps({
   selectedStart: String,
   selectedEnd: String,
   unlinkPanels: Boolean,
-  name: String
+  name: String,
+  isRange: Boolean,
+  rangeStep: String
 })
 
 const state = reactive({
   titleList: Object.freeze(['日', '一', '二', '三', '四', '五', '六']),
   dataList: [],
+  pickerHoverItem:{}
 })
+
+watch(() =>props.modelValue,(newVal) => {
+  nextTick(() => {
+    state.dataList = generatePaneData(newVal)
+  })
+},{immediate:true})
 
 const titleText = computed(() => {
   const { year, month } = parseDate(props.modelValue);
@@ -93,31 +103,35 @@ const currentItem = computed(() => {
 const tdClasss = computed(() => {
   const selectedStartParsed = parseDate(props.selectedStart);
   const selectedEndParsed = parseDate(props.selectedEnd);
-
-  const start = getTime(props.selectedStart);
-  const end = getTime(props.selectedEnd);
-
   return (item) => {
     const isSelectedStart = props.selectedStart && checkSelectDay(selectedStartParsed,item)
     const isSelectedEnd = props.selectedEnd && checkSelectDay(selectedEndParsed,item)
-    const cur = getTime(item.Y, item.M, item.D)
-    const isRange = props.selectedStart && props.selectedEnd && (start <= cur && cur <= end)
 
     return {
       'is-today': item.isToday,
       'other-month': !item.isCurMonth,
       'is-selected-start': isSelectedStart && item.isCurMonth,
       'is-selected-end': isSelectedEnd && item.isCurMonth,
-      'in-range': isRange
+      'in-range': (props.isRange && isSelectedStart && item.isCurMonth) || isRope(item)
     }
   }
 })
 
-watch(() =>props.modelValue,(newVal) => {
-  nextTick(() => {
-    state.dataList = generatePaneData(newVal)
-  })
-},{immediate:true})
+const isRope = (item) => {
+  if (!item.isCurMonth) return false;
+  const cur = getTime(item.Y, item.M, item.D);
+  const start = getTime(props.selectedStart);
+  const end = getTime(props.selectedEnd);
+  const hoverItem = state.pickerHoverItem;
+ 
+  if(props.rangeStep == 'start') {
+    if (!hoverItem) return false;
+    const min = Math.min(start, hoverItem.timeStamp);
+    const max = Math.max(start, hoverItem.timeStamp);
+    return cur >= min && cur <= max;
+  }
+  return cur >= start && cur <= end; 
+}
 
 // 生成面板日期数据
 const generatePaneData = (newVal) => {
@@ -201,6 +215,19 @@ const togglePanelData = (type, action) => {
   }
 }
 
+// 鼠标划过日期面板上的日期时
+// 若划过内容超出本月范畴，则自动取本月第一天或者最后一天
+const handleItemMouseover = (item,dataList) => {
+  const curData = dataList.filter((e) => e.isCurMonth);
+  if (item.isNextMonth) {
+    state.pickerHoverItem = curData[curData.length - 1];
+  } else if (item.isPrevMonth) {
+    state.pickerHoverItem = curData[0];
+  } else {
+    state.pickerHoverItem = item;
+  }
+}
+
 const { titleList,dataList } = toRefs(state);
 defineExpose({
   togglePanelData
@@ -211,12 +238,14 @@ defineExpose({
 <style lang="scss" scoped>
 @import '../../../styles/components/date-picker.scss';
 
-
 table{
   border-collapse: collapse;
   width: 100%;
   font-size: 12px;
   line-height: 32px;
+  tr{
+    padding: 4px 0;
+  }
   th{
     padding: 5px;
     color: #606266;
@@ -229,6 +258,7 @@ table{
     padding: 4px 6px;
     text-align: center;
     max-width: 250px;
+    box-sizing: border-box;
     white-space: pre-wrap;
     cursor: pointer;
     &:hover{
@@ -258,6 +288,9 @@ table{
         color: #fff;
         background-color: #409eff;
       }
+    }
+    &.in-range{
+      background-color: #f2f6fc;
     }
   }
 }

@@ -73,6 +73,27 @@
     border-radius: 4px;
     margin: 5px 0;
     z-index: 99;
+    .m-date-panel-sidebar{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      border-right: 1px solid #e4e4e4;
+      box-sizing: border-box;
+      padding-top: 6px;
+      padding-left: 12px;
+      background-color: #fff;
+      overflow: auto;
+      .m-date-panel-shortcut{
+        line-height: 28px;
+        font-size: 14px;
+        color: #606266;
+        cursor: pointer;
+        &:hover{
+          color: #409eff;
+        }
+      }
+    }
     .m-date-panel-body{
       display: flex;
       .m-date-panel__wrap{

@@ -1,6 +1,10 @@
 <template>
   <div class="m-time-picker-rel" v-inside>
-    <div class="m-time-picker" :class="selectInputClass">
+    <div 
+      class="m-time-picker" 
+      :class="selectInputClass"
+      @mouseenter="inputHovering = true"
+      @mouseleave="inputHovering = false">
       <span class="m-input__prefix">
         <i class="iconfont icon-time"></i>
       </span>
@@ -12,7 +16,7 @@
         :disabled="disabled"
         :readonly="readonly"
       >
-      <span class="m-input__suffix" @click="handleClear">
+      <span class="m-input__suffix" @click="handleClear" v-if="showClose">
         <i class="iconfont icon-error"></i>
       </span>
     </div>
@@ -86,6 +90,10 @@ const props = defineProps({
     type: String,
     default: 'HH:mm:ss',
   },
+  clearable: {
+    type: Boolean,
+    default: true,
+  },
   confirm: {
     type: Boolean,
     default: false
@@ -105,6 +113,7 @@ const props = defineProps({
   },
 })
 
+const inputHovering = ref(false);
 const isShow = ref(false);
 const startPicker = ref(null);
 const endPicker = ref(null);
@@ -118,6 +127,10 @@ const selectInputClass = computed(() => {
   return {
     'm-time-picker-disabled': props.disabled
   }
+})
+
+const showClose = computed(() => {
+  return props.clearable && state.inputText && inputHovering.value
 })
 
 // 是否选择时间范围

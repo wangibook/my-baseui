@@ -21,6 +21,6 @@ const value2 = ref([])
 
 <style>
 .date{
-  margin-left: 30px;
+  margin-left: 50px;
 }
 </style>
