@@ -63,4 +63,9 @@ export const formComponent = [
     content: datePickerContent,
     component: () => import('/packages/components/date-picker/doc/doc.md')
   },
+  {
+    path: '/rate',
+    name: 'Rate 评分',
+    component: () => import('/packages/components/rate/doc/doc.md')
+  },
 ]

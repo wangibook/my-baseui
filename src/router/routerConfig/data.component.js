@@ -9,7 +9,7 @@ import treeContent from '/packages/components/tree/doc/content.json';
 export const dataComponent = [
   {
     path: '/badge',
-    name: 'Badge 卡片',
+    name: 'Badge 徽章',
     content: badgeContent,
     component: () => import('/packages/components/badge/doc/doc.md')
   },
