@@ -94,12 +94,6 @@ const titleText = computed(() => {
   return `${year}年${month + 1}月`;
 })
 
-const currentItem = computed(() => {
-  return (trIndex, tdIndex) =>{
-    state.dataList[trIndex * 7 + tdIndex];
-  }
-})
-
 const tdClasss = computed(() => {
   const selectedStartParsed = parseDate(props.selectedStart);
   const selectedEndParsed = parseDate(props.selectedEnd);
