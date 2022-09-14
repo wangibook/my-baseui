@@ -25,7 +25,7 @@ export default {
 </script>
 
 <script setup>
-import { ref,onMounted, reactive, provide, watch, watchEffect } from 'vue';
+import { ref,onMounted, reactive, provide, watch } from 'vue';
 import treeNode from './tree-node.vue';
 import { deepCopy } from '~/utils/index';
 

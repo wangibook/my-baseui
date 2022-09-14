@@ -18,21 +18,20 @@
       </i>
     </div>
     <div class="m-rate-text" v-if="showText && currentValue > 0">
-      <slot>
-        {{currentValue}} 星
-      </slot>
+      <slot>{{currentValue}} 星</slot>
     </div>
   </div>
 </template>
 
 <script>
-import { computed, reactive, toRefs, watch } from 'vue';
 export default {
   name: "mRate"
 };
 </script>
 
 <script setup>
+import { computed, reactive, toRefs, watch } from 'vue';
+
 const emits = defineEmits(['update:modelValue','on-change'])
 const props = defineProps({
   count: {
