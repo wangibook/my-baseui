@@ -7,6 +7,7 @@ import switchContent from '/packages/components/switch/doc/content.json';
 import inputnumberContent from '/packages/components/input-number/doc/content.json';
 import timePickerContent from '/packages/components/time-picker/doc/content.json';
 import datePickerContent from '/packages/components/date-picker/doc/content.json';
+import rateContent from '/packages/components/rate/doc/content.json';
 
 export const formComponent = [
   {
@@ -66,6 +67,7 @@ export const formComponent = [
   {
     path: '/rate',
     name: 'Rate 评分',
+    content: rateContent,
     component: () => import('/packages/components/rate/doc/doc.md')
   },
 ]

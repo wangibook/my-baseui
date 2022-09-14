@@ -2,6 +2,7 @@ import alertContent from '/packages/components/alert/doc/content.json';
 import dialogContent from '/packages/components/dialog/doc/content.json';
 import messageContent from '/packages/components/message/doc/content.json';
 import drawerContent from '/packages/components/drawer/doc/content.json';
+import loadingContent from '/packages/components/loading/doc/content.json';
 
 export const feedbackComponent = [
   {
@@ -27,5 +28,11 @@ export const feedbackComponent = [
     name: 'Drawer 抽屉',
     content: drawerContent,
     component: () => import('/packages/components/drawer/doc/doc.md')
+  },
+  {
+    path: '/loading',
+    name: 'Loading 加载',
+    content: loadingContent,
+    component: () => import('/packages/components/loading/doc/doc.md')
   },
 ]

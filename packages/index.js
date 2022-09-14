@@ -41,6 +41,7 @@ import mAlert from "./components/alert/index";
 import mDialog from "./components/dialog/index";
 import mMessage from "./components/message/index";
 import mDrawer from "./components/drawer/index";
+import Loading from "./components/loading";
 
 // 组件列表
 const components = [
@@ -94,6 +95,8 @@ const install = (Vue) => {
   // 遍历注册全局组件
   components.map(component => Vue.component(component.name, component))
   Vue.config.globalProperties.$message = mMessage
+  Vue.config.globalProperties.$loading = Loading.service
+  Vue.directive('loading', Loading.directive);
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

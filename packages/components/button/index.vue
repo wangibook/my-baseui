@@ -3,7 +3,8 @@
     class="m-button" 
     :class="styleClass"
     :disabled="disabled"
-    :round="round">
+    :round="round"
+    @click="handleClick">
     <i class="iconfont icon-loading" v-if="loading"></i>
     <i :class="isIconClass" v-if="leftIcon && !loading"></i>
     <span ref="slotRef" :style="slotStyle" :class=" isHaveSlot ? 'noText': '' ">
@@ -22,6 +23,7 @@ export default {
 <script setup>
 import { computed, ref, onMounted } from 'vue';
 
+const emits = defineEmits(['click'])
 const props = defineProps({
   type: {
     type: String,
@@ -85,6 +87,10 @@ const slotStyle = computed(() => {
     'margin-right': props.rightIcon ? '4px' : '0'
   }
 })
+
+const handleClick = (e) => {
+  emits('click')
+}
 
 onMounted(() => {
   if(!slotRef.value.innerText) {
