@@ -12,6 +12,15 @@
       "require": "./dist/my-baseui.umd.js"
     }
   },
+  "keywords": [
+    "vue",
+    "vue3",
+    "vuejs",
+    "vite",
+    "my-baseui",
+    "mybaseui",
+    "components"
+  ],
   "files": [
     "dist/*"
   ],
