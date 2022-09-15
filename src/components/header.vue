@@ -49,11 +49,11 @@ const toHome = () => {
 };
 
 const pageView = (item,index) => {
-  nIndex.value = index
   if (item.path == "open") {
     window.open(item.url);
   } else {
     router.push(item.path);
+    nIndex.value = index
   }
   sessionStorage.setItem("nIndex", index);
 }
