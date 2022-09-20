@@ -36,6 +36,10 @@ import mDropdownItem from "./components/dropdown-item/index";
 import mDropdownMenu from "./components/dropdown-menu/index";
 import mTabs from "./components/tabs/index";
 import mTabPane from "./components/tab-pane/index";
+import mMenu from "./components/menu/index";
+import mMenuGroup from "./components/menu-group/index";
+import mMenuItem from "./components/menu-item/index";
+import mSubmenu from "./components/submenu/index";
 //Feedback 反馈组件
 import mAlert from "./components/alert/index";
 import mDialog from "./components/dialog/index";
@@ -82,6 +86,10 @@ const components = [
   mDropdownMenu,
   mTabs,
   mTabPane,
+  mMenu,
+  mMenuGroup,
+  mMenuItem,
+  mSubmenu,
   //Feedback 反馈组件
   mAlert,
   mDialog,
@@ -142,6 +150,10 @@ export default {
   mDropdownMenu,
   mTabs,
   mTabPane,
+  mMenu,
+  mMenuGroup,
+  mMenuItem,
+  mSubmenu,
   //Feedback 反馈组件
   mAlert,
   mDialog,

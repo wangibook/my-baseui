@@ -44,7 +44,7 @@ import preview from '@/components/preview.vue';
 <preview compName="link" demoName="demo4"/>
 
 
-## Attributes 参数
+## Attributes
 | 参数          | 说明            | 类型            | 可选值         | 默认值   |
 |------------   |---------------- |----------------|-------------- |-------- |
 | type          | 类型            | string          |	primary / success / warning / danger / info      | default      |
