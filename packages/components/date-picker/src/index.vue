@@ -94,13 +94,11 @@ const props = defineProps({
     type: String,
     default: '请选择'
   },
-  // 类型
   type: {
     type: String,
     default: 'date',
     validator: (val) => ['date', 'daterange'].includes(val),
   },
-  // 展示的时间格式
   format: {
     type: String,
     default: 'yyyy-MM-dd',
@@ -125,7 +123,6 @@ const props = defineProps({
     type: String,
     default: ' - ',
   },
-  // 面板是否支持联动
   unlinkPanels: {
     type: Boolean,
     default: false,
