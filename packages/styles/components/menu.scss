@@ -1,0 +1,216 @@
+// 水平样式
+.m-menu--horizontal{
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #e6e6e6;
+  .m-menu-item,
+  .m-submenu{
+    float: left;
+    height: inherit;
+    line-height: inherit;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+  }
+  .m-menu-item{
+    &:hover{
+      color: #409eff;
+    }
+  }
+  .m-submenu{
+    color: #303133;
+    position: relative;
+    .m-submenu-title{
+      &:hover{
+        color: #409eff;
+      }
+      .iconfont{
+        margin-left: 5px;
+      }
+    }
+    .m-select-dropdown{
+      position: absolute;
+      left: 0;
+      top: 61px;
+      min-width: 200px;
+      background: #fff;
+      border: 1px solid #dcdfe6f6;
+      border-radius: 4px;
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      .m-menu-item{
+        float:none;
+        color: #515a6e;
+        text-align: left;
+        height: 40px;
+        line-height: 40px;
+        &:hover{
+          color: #409eff;
+          background-color: #ECF5FF;
+        }
+        &.is-active{
+          color: #409eff;
+          border-bottom: none;
+        }
+      }
+      .m-submenu{
+        float: none;
+        height: 40px;
+        line-height: 40px;
+        .iconfont{
+          position: absolute;
+          top: 0;
+          right: 24px;
+        }
+      }
+      .m-menu-group{
+        .m-menu-group-title{
+          padding: 7px 0 7px 10px;
+          line-height: normal;
+          font-size: 12px;
+          color: #909399;
+        }
+      }
+    }
+  }
+  .is-active{
+    color: #2d8cf0;
+    border-bottom: 2px solid #2d8cf0;
+  }
+}
+// 垂直样式
+.m-menu--vertical{
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  width: 240px;
+  min-height: 400px;
+  border-right: 1px solid #e6e6e6;
+  .m-menu-item,
+  .m-submenu{
+    font-size: 14px;
+    color: #303133;
+    list-style: none;
+    cursor: pointer;
+  }
+  .m-menu-item{
+    height: 56px;
+    line-height: 56px;
+    padding: 0 20px;
+    &:hover{
+      color: #409eff;
+      background-color: #ECF5FF;
+    }
+  }
+  .m-submenu{
+    padding: 0;
+    .m-submenu-title{
+      height: 56px;
+      line-height: 56px;
+      padding: 0 20px;
+      position: relative;
+      &:hover{
+        color: #409eff;
+        background-color: #ECF5FF;
+      }
+      .iconfont{
+        position: absolute;
+        top: 0;
+        right: 24px;
+      }
+    }
+    .m-select-dropdown{
+      .m-menu-item{
+        padding: 0 20px 0 40px;
+      }
+    }
+  }
+  .m-menu-group{
+    .m-menu-group-title{
+      padding: 7px 0 7px 20px;
+      line-height: normal;
+      font-size: 12px;
+      color: #909399;
+    }
+  }
+  .is-active {
+    color: #2d8cf0;
+  }
+}
+
+// 黑色主题
+.m-menu--dark{
+  background: #515a6e;
+  color: #fff;
+  .m-menu-item{
+    color: #fff;
+    &.is-active{
+      color: #fff;
+      background: #2d8cf0;
+    }
+  }
+  .m-submenu{
+    .m-submenu-title{
+      color: #fff;
+    }
+    .m-select-dropdown{
+      background: #515a6e;
+      .m-menu-item{
+        color: #fff;
+        &:hover{
+          color: #409eff;
+        }
+        &.is-active{
+          color: #fff;
+          background: #2d8cf0;
+        }
+      }
+    }
+  } 
+}
+.m-menu--horizontal.m-menu--dark{
+  .m-menu-item{
+    &.is-active{
+      color: #2d8cf0;
+      background: transparent;
+    } 
+  }
+  .m-submenu{
+    &.is-active{
+      .m-submenu-title{
+        color: #2d8cf0;
+      }
+    }
+  }
+}
+.m-menu--vertical.m-menu--dark{
+  .m-submenu{
+    &.is-active{
+      .m-submenu-title{
+        color: #2d8cf0;
+      }
+    }
+  }
+}
+
+// 禁用
+.m-menu-item.is-disabled,
+.m-submenu .m-menu-item.is-disabled{
+  cursor: not-allowed;
+  color: #cacaca !important;
+  background: none !important;
+  &:hover{
+    color: #cacaca !important;
+  }
+}
+.m-menu--dark .m-menu-item.is-disabled{
+  cursor: not-allowed;
+  opacity: .3;
+  color: #cacaca !important;
+  background: none !important;
+  &:hover{
+    color: #cacaca !important;
+  }
+}
