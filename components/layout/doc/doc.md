@@ -52,7 +52,7 @@ import preview from '@/components/preview.vue'
 <preview compName="layout" demoName="demo4"/>
 
 
-## Attributes 参数
+## Attributes
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | span     | 栅格占据的列数   | number    |   —      |    	24    |

@@ -1,0 +1,24 @@
+[
+  {
+    "title": "顶部导航",
+    "active": true
+  },
+  {
+    "title": "侧栏导航"
+  },
+  {
+    "title": "分组"
+  },
+  {
+    "title": "禁用"
+  },
+  {
+    "title": "菜单展开"
+  },
+  {
+    "title": "Attributes"
+  },
+  {
+    "title": "Events"
+  }
+]

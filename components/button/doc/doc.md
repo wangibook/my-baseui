@@ -64,7 +64,7 @@ import preview from '@/components/preview.vue';
 </div>
 <preview compName="button" demoName="demo5"/>
 
-## Attributes 参数
+## Attributes
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | type     | 类型   | string    |   primary / success / warning / danger / info / text |     —    |
