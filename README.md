@@ -6,10 +6,12 @@
 基于 Vue3，Vite2 的轻量级组件库，用于学习研究，欢迎交流
 
 # Docs 
-[my-baseui使用文档](https://wangibook.github.io/my-baseui/#/)
+使用文档1：[my-baseui使用文档](https://wangibook.github.io/my-baseui/#/)
+使用文档2：[my-baseui使用文档](https://ui.xkxk.tech/#/)
 
 # 组件库说明
 目前只是写了二十来个组件，文档侧边栏切换时可能会卡顿，如果想更好的体验，可以clone下来，在本地查看。
+完成了Layout 布局、Space 间距、Button 按钮、Link 链接、Input 输入框、Textarea 文本域、Radio 单选、Checkbox 多选、Select 下拉框、Switch 开关、InputNumber 计数器、TimePicker 时间选择器、DatePicker 日期选择器、Rate 评分、Badge 徽标、Card 卡片、Tag 标签、Progress 进度条、Table 表格、Pagination 分页、Tree 树形控件、Breadcrumb 面包屑、Dropdown 下拉菜单、Tabs 标签页、Menu 导航菜单、Alert 提示、Dialog 对话框、Message 消息提示、Drawer 抽屉、Loading 加载等组件，参考了Element UI 和 iView源码，并完成使用文档的编写。
 
 ## 安装
 使用npm 或 yarn 安装
